@@ -1,0 +1,6 @@
+# django-humans-txt
+# MANIFEST.in
+
+include README.rst
+include COPYING
+include AUTHORS
