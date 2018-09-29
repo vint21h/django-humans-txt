@@ -19,76 +19,76 @@ msgstr ""
 
 #: models/component.py:21
 msgid "component name"
-msgstr ""
+msgstr "назва компоненту"
 
 #: models/component.py:26
 msgid "component"
-msgstr ""
+msgstr "компонент"
 
 #: models/component.py:27
 msgid "components"
-msgstr ""
+msgstr "компоненти"
 
 #: models/person.py:21
 msgid "person name"
-msgstr ""
+msgstr "ім'я персони"
 
 #: models/person.py:22
 msgid "person title"
-msgstr ""
+msgstr "посада персони"
 
 #: models/person.py:23
 msgid "person site, email, link to a contact form, etc."
-msgstr ""
+msgstr "сайт, email, посилання на контактну форму персони, etc."
 
 #: models/person.py:24
 msgid "person twitter URL"
-msgstr ""
+msgstr "посилання на twitter персони"
 
 #: models/person.py:25
 msgid "person city, country"
-msgstr ""
+msgstr "місто, країна персони"
 
 #: models/person.py:30
 msgid "person"
-msgstr ""
+msgstr "персона"
 
 #: models/person.py:31
 msgid "persons"
-msgstr ""
+msgstr "персони"
 
 #: models/software.py:21
 msgid "software name"
-msgstr ""
+msgstr "назва програми"
 
 #: models/software.py:26 models/software.py:27
 msgid "software"
-msgstr ""
+msgstr "програма"
 
 #: models/standard.py:21
 msgid "standard name"
-msgstr ""
+msgstr "назва стандарту"
 
 #: models/standard.py:26
 msgid "standard"
-msgstr ""
+msgstr "стандарт"
 
 #: models/standard.py:27
 msgid "standards"
-msgstr ""
+msgstr "стандарти"
 
 #: models/thank.py:21
 msgid "thank to person or organization name"
-msgstr ""
+msgstr "ім'я персони або організації якої вдячні"
 
 #: models/thank.py:22
 msgid "thank to person or organization site URL"
-msgstr ""
+msgstr "посилання на сайт персони або організації якої вдячні"
 
 #: models/thank.py:27
 msgid "thank"
-msgstr ""
+msgstr "подяка"
 
 #: models/thank.py:28
 msgid "thanks"
-msgstr ""
+msgstr "подяки"
