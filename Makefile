@@ -2,7 +2,7 @@
 # Makefile
 
 
-PHONY: docs clean build register upload create-virtualenv pip-install startproject makemessages compilemessages help
+PHONY: docs clean build register upload create-virtualenv pip-install startproject makemessages compilemessages merge-and-push-all help
 MANAGE=$(PWD)/tmp/$(PROJECT_NAME)/manage.py
 
 
@@ -39,6 +39,9 @@ makemessages:
 compilemessages:
 	$(MANAGE) compilemessages
 
+merge-and-push-all:
+	git co master && git merge dev && git co dev && git push --all && git push --tags
+
 help:
 	@echo "    docs:"
 	@echo "        Build docs."
@@ -60,3 +63,5 @@ help:
 	@echo "        Harvest translations."
 	@echo "    compilemessages:"
 	@echo "        Compile translations."
+	@echo "    merge-and-push-all:"
+	@echo "        Merge dev branch to master and push all commits and all tags."
