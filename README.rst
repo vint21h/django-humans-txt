@@ -2,7 +2,7 @@
 .. README.rst
 
 A django-humans-txt documentation
-======================================
+=================================
 
     *django-humans-txt is a django reusable application to handle humans.txt*
 
@@ -23,6 +23,18 @@ Add ``"humans_txt"`` to ``settings.INSTALLED_APPS``.
         "humans_txt",
     )
 
+Add ``"humans_txt"`` to your urls definitions.
+
+.. code-block:: python
+
+    urlpatterns += [
+        url(r"^humans\.txt", include("humans_txt.urls")),
+    )
+
+Settings
+--------
+``HUMANS_TXT_BANNER``
+    Contains an banner that placed at the start of humans.txt response. Defaults to ``""``.
 
 Licensing
 ---------

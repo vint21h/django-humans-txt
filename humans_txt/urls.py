@@ -4,8 +4,6 @@
 # humans_txt/urls.py
 
 
-from __future__ import unicode_literals
-
 from django.conf.urls import url
 
 
@@ -14,6 +12,8 @@ __all__ = [
 ]
 
 
-app_name="humans_txt"
-# humans urls
-urlpatterns = []
+app_name = "humans_txt"
+# humans.txt urls
+urlpatterns = [
+    url(r"^$", lambda x: x, name="humans_txt"),
+]

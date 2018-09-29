@@ -1,6 +1,11 @@
 # django-humans-txt
 # MANIFEST.in
 
+
 include README.rst
 include COPYING
 include AUTHORS
+humans_txt/locale/en/LC_MESSAGES/en/django.po
+humans_txt/locale/en/LC_MESSAGES/en/django.mo
+humans_txt/locale/uk/LC_MESSAGES/en/django.po
+humans_txt/locale/uk/LC_MESSAGES/en/django.mo
