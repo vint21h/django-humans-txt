@@ -4,6 +4,7 @@
 # django-humans-txt
 # setup.py
 
+
 from setuptools import (
     setup,
     find_packages,
@@ -29,15 +30,10 @@ setup(
     include_package_data=True,
     classifiers=[
         "Environment :: Plugins",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
         "Operating System :: Unix",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
         "Topic :: Utilities",
-        "Framework :: Django :: 1.7",
-        "Framework :: Django :: 1.8",
-        "Framework :: Django :: 1.9",
-        "Framework :: Django :: 1.10",
         "Framework :: Django :: 1.11",
         "Framework :: Django :: 2.0",
         "Framework :: Django :: 2.1",
