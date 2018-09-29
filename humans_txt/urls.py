@@ -6,14 +6,15 @@
 
 from django.conf.urls import url
 
+from humans_txt.views import humans_txt
+
 
 __all__ = [
     "urlpatterns",
 ]
 
 
-app_name = "humans_txt"
 # humans.txt urls
 urlpatterns = [
-    url(r"^$", lambda x: x, name="humans_txt"),
-]
+    url(r"^$", humans_txt, name="humans_txt"),
+]  # type: list

@@ -1,0 +1,7 @@
+{# django-humans-txt #}
+{# humans_txt/templates/humans_txt/humans_txt.txt #}
+
+
+{% if BANNER %}
+    {{ BANNER }}
+{% endif %}
