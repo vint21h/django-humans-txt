@@ -5,3 +5,26 @@
 {% if BANNER %}
     {{ BANNER }}
 {% endif %}
+{% if TEAM %}
+    /* TEAM */
+    {% for person in TEAM %}
+        {{ person.title }}: {{ person.name }}
+        {% if person.contact %}Contact: {{ person.contact }}{% endif %}
+        {% if person.location %}Location: {{ person.location }}{% endif %}
+        {% if person.twitter %}Twitter: {{ person.twitter }}{% endif %}
+    {% endfor %}
+{% endif %}
+{% if THANKS %}
+    /* THANKS */
+    {% for thank in THANKS %}
+    {{ thank.name }}{% if thank.url %}: {{ thank.url }}{% endif %}
+    {% endfor %}
+{% endif %}
+{% if LAST_UPDATE or STANDARDS or COMPONENTS or SOFTWARE %}
+    /* SITE */
+
+    {% if LAST_UPDATE %}Last update: {{ LAST_UPDATE|date:"c" }}{% endif %}
+    {% if STANDARDS %}Standards: {% for standard in STANDARDS %}{{ standard.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}
+    {% if COMPONENTS %}Components: {% for component in COMPONENTS %}{{ component.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}
+    {% if SOFTWARE %}Software: {% for software in SOFTWARE %}{{ software.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}
+{% endif %}
