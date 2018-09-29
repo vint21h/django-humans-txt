@@ -51,6 +51,8 @@ Settings
     Contains an banner that placed at the start of humans.txt response. Defaults to ``""``.
 ``HUMANS_TXT_LAST_UPDATE``
     Contains project last update date. Defaults to ``None``.
+``HUMANS_TXT_LANGUAGES``
+    Contains list of site supported languages. Defaults to ``None``.
 
 Licensing
 ---------
