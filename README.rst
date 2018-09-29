@@ -31,6 +31,20 @@ Add ``"humans_txt"`` to your urls definitions.
         url(r"^humans\.txt", include("humans_txt.urls")),
     )
 
+Include ``"humans_txt/includes/humans_txt_meta.html"`` in your base template rel meta tag to <head> html tag .
+
+For example:
+
+.. code-block:: django
+
+    <head>
+        {% include "humans_txt/includes/humans_txt_meta.html" %}
+    </head>
+
+Usage
+-----
+Just fill Django humans.txt models instances in your admin in your taste.
+
 Settings
 --------
 ``HUMANS_TXT_BANNER``
