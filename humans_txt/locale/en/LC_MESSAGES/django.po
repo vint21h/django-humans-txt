@@ -21,72 +21,72 @@ msgstr ""
 
 #: models/component.py:26
 msgid "component"
-msgstr ""
+msgstr "component"
 
 #: models/component.py:27
 msgid "components"
-msgstr ""
+msgstr "components"
 
 #: models/person.py:21
 msgid "person name"
-msgstr ""
+msgstr "person name"
 
 #: models/person.py:22
 msgid "person title"
-msgstr ""
+msgstr "person title"
 
 #: models/person.py:23
 msgid "person site, email, link to a contact form, etc."
-msgstr ""
+msgstr "person site, email, link to a contact form, etc."
 
 #: models/person.py:24
 msgid "person twitter URL"
-msgstr ""
+msgstr "person twitter URL"
 
 #: models/person.py:25
 msgid "person city, country"
-msgstr ""
+msgstr "person city, country"
 
 #: models/person.py:30
 msgid "person"
-msgstr ""
+msgstr "person"
 
 #: models/person.py:31
 msgid "persons"
-msgstr ""
+msgstr "persons"
 
 #: models/software.py:21
 msgid "software name"
-msgstr ""
+msgstr "software name"
 
 #: models/software.py:26 models/software.py:27
 msgid "software"
-msgstr ""
+msgstr "software"
 
 #: models/standard.py:21
 msgid "standard name"
-msgstr ""
+msgstr "standard name"
 
 #: models/standard.py:26
 msgid "standard"
-msgstr ""
+msgstr "standard"
 
 #: models/standard.py:27
 msgid "standards"
-msgstr ""
+msgstr "standards"
 
 #: models/thank.py:21
 msgid "thank to person or organization name"
-msgstr ""
+msgstr "thank to person or organization name"
 
 #: models/thank.py:22
 msgid "thank to person or organization site URL"
-msgstr ""
+msgstr "thank to person or organization site URL"
 
 #: models/thank.py:27
 msgid "thank"
-msgstr ""
+msgstr "thank"
 
 #: models/thank.py:28
 msgid "thanks"
-msgstr ""
+msgstr "thanks"
