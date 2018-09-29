@@ -41,6 +41,7 @@ def humans_txt(request: HttpRequest) -> HttpResponse:
     context = {
         "BANNER": settings.BANNER,  # type: str
         "LAST_UPDATE": settings.LAST_UPDATE,  # type: date
+        "LANGUAGES": settings.LANGUAGES,  # type: list
         "TEAM": Person.objects.all(),  # type: QuerySet
         "THANKS": Thank.objects.all(),  # type: QuerySet
         "STANDARDS": Standard.objects.all(),  # type: QuerySet
@@ -48,4 +49,4 @@ def humans_txt(request: HttpRequest) -> HttpResponse:
         "SOFTWARE": Software.objects.all(),  # type: QuerySet
     }  # type: dict
 
-    return render_to_response("humans_txt/humans_txt.txt", context=context, content_type="text/plain")
+    return render_to_response("humans_txt/humans_txt.txt", context=context, content_type="text/plain; charset=utf-8")
