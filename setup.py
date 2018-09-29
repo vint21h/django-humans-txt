@@ -23,6 +23,7 @@ setup(
     author="Alexei Andrushievich",
     author_email="vint21h@vint21h.pp.ua",
     description="Handle humans.txt",
+    long_description=open("README.rst").read(),
     license="GPLv3 or later",
     url="https://github.com/vint21h/django-humans-txt/",
     download_url="https://github.com/vint21h/django-humans-txt/archive/{version}.tar.gz".format(version=__version__),

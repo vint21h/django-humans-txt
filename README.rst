@@ -4,7 +4,7 @@
 A django-humans-txt documentation
 =================================
 
-    *django-humans-txt is a django reusable application to handle humans.txt*
+    *django-humans-txt is a django reusable application to handle humans.txt (http://humanstxt.org/)*
 
 .. contents::
 
@@ -35,6 +35,8 @@ Settings
 --------
 ``HUMANS_TXT_BANNER``
     Contains an banner that placed at the start of humans.txt response. Defaults to ``""``.
+``HUMANS_TXT_LAST_UPDATE``
+    Contains project last update date. Defaults to ``None``.
 
 Licensing
 ---------
