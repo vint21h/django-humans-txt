@@ -5,9 +5,9 @@
 include README.rst
 include COPYING
 include AUTHORS
-humans_txt/locale/en/LC_MESSAGES/en/django.po
-humans_txt/locale/en/LC_MESSAGES/en/django.mo
-humans_txt/locale/uk/LC_MESSAGES/en/django.po
-humans_txt/locale/uk/LC_MESSAGES/en/django.mo
-humans_txt/templates/humans_txt/includes/humans_txt_meta.html
-humans_txt/templates/humans_txt/humans_txt.txt
+include humans_txt/locale/en/LC_MESSAGES/en/django.po
+include humans_txt/locale/en/LC_MESSAGES/en/django.mo
+include humans_txt/locale/uk/LC_MESSAGES/en/django.po
+include humans_txt/locale/uk/LC_MESSAGES/en/django.mo
+include humans_txt/templates/humans_txt/includes/humans_txt_meta.html
+include humans_txt/templates/humans_txt/humans_txt.txt
