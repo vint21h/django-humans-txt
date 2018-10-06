@@ -15,6 +15,7 @@
 *.save
 .idea/*
 *sublime*
+.vscode/*
 *geany*
 *komodo*
 .env/*

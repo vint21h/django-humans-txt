@@ -41,6 +41,8 @@ For example:
         {% include "humans_txt/includes/humans_txt_meta.html" %}
     </head>
 
+Run ``python manage.py migrate`` in your project folder to apply app migrations.
+
 Usage
 -----
 Just fill Django humans.txt models instances in your admin in your taste.
