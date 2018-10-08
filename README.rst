@@ -31,7 +31,7 @@ Add ``"humans_txt"`` to your urls definitions.
         url(r"^humans\.txt", include("humans_txt.urls")),
     )
 
-Include ``"humans_txt/includes/humans_txt_meta.html"`` in your base template rel meta tag to <head> html tag .
+Include ``"humans_txt/includes/humans_txt_meta.html"`` in your base template rel meta tag to ``<head>`` html tag .
 
 For example:
 
