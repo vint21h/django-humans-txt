@@ -3,7 +3,7 @@
 # -*- coding: utf-8 -*-
 
 # django-humans-txt
-# xicon/__init__.py
+# setup.py
 
 
 import setuptools

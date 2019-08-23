@@ -8,11 +8,13 @@ source = humans_txt
 omit =
     */__init__.py
    humans_txt/apps.py
+   humans_txt/migrations/*.py
 
 [report]
 omit =
     */__init__.py
     humans_txt/apps.py
+    humans_txt/migrations/*.py
 exclude_lines =
     pragma: no cover
 

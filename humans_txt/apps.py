@@ -8,10 +8,10 @@ from django.apps import AppConfig
 from django.utils.translation import ugettext_lazy as _
 
 
-__all__ = ["Config"]
+__all__ = ["DjangoHumansTxtConfig"]  # type: list
 
 
-class Config(AppConfig):
+class DjangoHumansTxtConfig(AppConfig):
 
     name = "humans_txt"
     verbose_name = _("Django humans.txt")
