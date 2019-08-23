@@ -7,4 +7,4 @@
 __all__ = ["default_app_config"]
 
 
-default_app_config = "humans_txt.apps.Config"
+default_app_config = "humans_txt.apps.DjangoHumansTxtConfig"

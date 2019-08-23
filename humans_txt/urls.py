@@ -13,4 +13,4 @@ __all__ = ["urlpatterns"]
 
 
 # humans.txt urls
-urlpatterns = [url(r"^$", humans_txt, name="humans_txt")]  # type: list
+urlpatterns = [url(r"^$", humans_txt, name="humans-txt")]  # type: list

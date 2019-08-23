@@ -30,9 +30,9 @@ def humans_txt(request: HttpRequest) -> HttpResponse:
     """
 
     context = {
-        "BANNER": settings.BANNER,
-        "LAST_UPDATE": settings.LAST_UPDATE,
-        "LANGUAGES": settings.LANGUAGES,
+        "BANNER": settings.HUMANS_TXT_BANNER,
+        "LAST_UPDATE": settings.HUMANS_TXT_LAST_UPDATE,
+        "LANGUAGES": settings.HUMANS_TXT_LANGUAGES,
         "TEAM": Person.objects.all(),
         "THANKS": Thank.objects.all(),
         "STANDARDS": Standard.objects.all(),
