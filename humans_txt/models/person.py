@@ -52,8 +52,7 @@ class Person(models.Model):
         ordering = ["name"]  # type: list
 
     def __unicode__(self) -> str:
-
-        return "{title}: {name}".format(**{"title": self.title, "name": self.name})
+        return f"{self.title}: {self.name}"
 
     def __str__(self) -> str:
 

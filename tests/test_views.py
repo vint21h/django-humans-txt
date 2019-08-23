@@ -228,3 +228,206 @@ class HumansTxtViewTest(TestCase):
 
         self.assertListEqual(list1=[], list2=response.context.get("HUMANS_TXT_LANGUAGES"))
         self.assertInHTML(needle=expected, haystack=response.content.decode())
+
+    def test_humans_txt__render__without_team(self) -> None:
+        """
+        Test view rendering result without team.
+
+        :return: nothing.
+        :rtype: None.
+        """
+
+        Person.objects.all().delete()
+
+        expected = """
+             _ _                               _                                            _        _   
+            | (_)                             | |                                          | |      | |  
+          __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_ 
+         / _` | |/ _` | '_ \ / _` |/ _ \______| '_ \| | | | '_ ` _ \ / _` | '_ \/ __|______| __\ \/ / __|
+        | (_| | | (_| | | | | (_| | (_) |     | | | | |_| | | | | | | (_| | | | \__ \      | |_ >  <| |_ 
+         \__,_| |\__,_|_| |_|\__, |\___/      |_| |_|\__,_|_| |_| |_|\__,_|_| |_|___/       \__/_/\_\__|
+             _/ |             __/ |                                                                      
+            |__/             |___/                                                                       
+
+        /* THANKS */
+        Alexei Andrushievich: https://github.com/vint21h/
+
+        /* SITE */
+        Last update: 1991-08-24
+        Language: en / uk
+        Standards: PEP 8
+        Components: Django
+        Software: tox
+        """  # type: str
+        response = self.client.get(
+            path=reverse("humans-txt")
+        )
+
+        self.assertQuerysetEqual(qs=Person.objects.none(), values=response.context.get("HUMANS_TXT_TEAM"))
+        self.assertInHTML(needle=expected, haystack=response.content.decode())
+
+    def test_humans_txt__render__without_standards(self) -> None:
+        """
+        Test view rendering result without standards.
+
+        :return: nothing.
+        :rtype: None.
+        """
+
+        Standard.objects.all().delete()
+
+        expected = """
+             _ _                               _                                            _        _   
+            | (_)                             | |                                          | |      | |  
+          __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_ 
+         / _` | |/ _` | '_ \ / _` |/ _ \______| '_ \| | | | '_ ` _ \ / _` | '_ \/ __|______| __\ \/ / __|
+        | (_| | | (_| | | | | (_| | (_) |     | | | | |_| | | | | | | (_| | | | \__ \      | |_ >  <| |_ 
+         \__,_| |\__,_|_| |_|\__, |\___/      |_| |_|\__,_|_| |_| |_|\__,_|_| |_|___/       \__/_/\_\__|
+             _/ |             __/ |                                                                      
+            |__/             |___/                                                                       
+
+        /* TEAM */       
+        Python developer: Alexei Andrushievich
+        Contact: vint21h@vint21h.pp.ua
+        Location: Ukraine
+        Twitter: https://twitter.com/vint21h/
+
+        /* THANKS */
+        Alexei Andrushievich: https://github.com/vint21h/
+
+        /* SITE */
+        Last update: 1991-08-24
+        Language: en / uk
+        Components: Django
+        Software: tox
+        """  # type: str
+        response = self.client.get(
+            path=reverse("humans-txt")
+        )
+
+        self.assertQuerysetEqual(qs=Standard.objects.none(), values=response.context.get("HUMANS_TXT_STANDARDS"))
+        self.assertInHTML(needle=expected, haystack=response.content.decode())
+
+    def test_humans_txt__render__without_thanks(self) -> None:
+        """
+        Test view rendering result without thanks.
+
+        :return: nothing.
+        :rtype: None.
+        """
+
+        Thank.objects.all().delete()
+
+        expected = """
+             _ _                               _                                            _        _   
+            | (_)                             | |                                          | |      | |  
+          __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_ 
+         / _` | |/ _` | '_ \ / _` |/ _ \______| '_ \| | | | '_ ` _ \ / _` | '_ \/ __|______| __\ \/ / __|
+        | (_| | | (_| | | | | (_| | (_) |     | | | | |_| | | | | | | (_| | | | \__ \      | |_ >  <| |_ 
+         \__,_| |\__,_|_| |_|\__, |\___/      |_| |_|\__,_|_| |_| |_|\__,_|_| |_|___/       \__/_/\_\__|
+             _/ |             __/ |                                                                      
+            |__/             |___/                                                                       
+
+        /* TEAM */       
+        Python developer: Alexei Andrushievich
+        Contact: vint21h@vint21h.pp.ua
+        Location: Ukraine
+        Twitter: https://twitter.com/vint21h/
+
+        /* SITE */
+        Last update: 1991-08-24
+        Language: en / uk
+        Standards: PEP 8
+        Components: Django
+        Software: tox
+        """  # type: str
+        response = self.client.get(
+            path=reverse("humans-txt")
+        )
+
+        self.assertQuerysetEqual(qs=Thank.objects.none(), values=response.context.get("HUMANS_TXT_THANKS"))
+        self.assertInHTML(needle=expected, haystack=response.content.decode())
+
+    def test_humans_txt__render__without_components(self) -> None:
+        """
+        Test view rendering result without components.
+
+        :return: nothing.
+        :rtype: None.
+        """
+
+        Component.objects.all().delete()
+
+        expected = """
+             _ _                               _                                            _        _   
+            | (_)                             | |                                          | |      | |  
+          __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_ 
+         / _` | |/ _` | '_ \ / _` |/ _ \______| '_ \| | | | '_ ` _ \ / _` | '_ \/ __|______| __\ \/ / __|
+        | (_| | | (_| | | | | (_| | (_) |     | | | | |_| | | | | | | (_| | | | \__ \      | |_ >  <| |_ 
+         \__,_| |\__,_|_| |_|\__, |\___/      |_| |_|\__,_|_| |_| |_|\__,_|_| |_|___/       \__/_/\_\__|
+             _/ |             __/ |                                                                      
+            |__/             |___/                                                                       
+
+        /* TEAM */       
+        Python developer: Alexei Andrushievich
+        Contact: vint21h@vint21h.pp.ua
+        Location: Ukraine
+        Twitter: https://twitter.com/vint21h/
+
+        /* THANKS */
+        Alexei Andrushievich: https://github.com/vint21h/
+
+        /* SITE */
+        Last update: 1991-08-24
+        Language: en / uk
+        Standards: PEP 8
+        Software: tox
+        """  # type: str
+        response = self.client.get(
+            path=reverse("humans-txt")
+        )
+
+        self.assertQuerysetEqual(qs=Component.objects.none(), values=response.context.get("HUMANS_TXT_COMPONENTS"))
+        self.assertInHTML(needle=expected, haystack=response.content.decode())
+
+    def test_humans_txt__render__without_software(self) -> None:
+        """
+        Test view rendering result without software.
+
+        :return: nothing.
+        :rtype: None.
+        """
+
+        Software.objects.all().delete()
+
+        expected = """
+             _ _                               _                                            _        _   
+            | (_)                             | |                                          | |      | |  
+          __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_ 
+         / _` | |/ _` | '_ \ / _` |/ _ \______| '_ \| | | | '_ ` _ \ / _` | '_ \/ __|______| __\ \/ / __|
+        | (_| | | (_| | | | | (_| | (_) |     | | | | |_| | | | | | | (_| | | | \__ \      | |_ >  <| |_ 
+         \__,_| |\__,_|_| |_|\__, |\___/      |_| |_|\__,_|_| |_| |_|\__,_|_| |_|___/       \__/_/\_\__|
+             _/ |             __/ |                                                                      
+            |__/             |___/                                                                       
+
+        /* TEAM */       
+        Python developer: Alexei Andrushievich
+        Contact: vint21h@vint21h.pp.ua
+        Location: Ukraine
+        Twitter: https://twitter.com/vint21h/
+
+        /* THANKS */
+        Alexei Andrushievich: https://github.com/vint21h/
+
+        /* SITE */
+        Last update: 1991-08-24
+        Language: en / uk
+        Standards: PEP 8
+        Components: Django
+        """  # type: str
+        response = self.client.get(
+            path=reverse("humans-txt")
+        )
+
+        self.assertQuerysetEqual(qs=Software.objects.none(), values=response.context.get("HUMANS_TXT_SOFTWARE"))
+        self.assertInHTML(needle=expected, haystack=response.content.decode())
