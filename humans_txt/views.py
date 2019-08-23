@@ -30,14 +30,14 @@ def humans_txt(request: HttpRequest) -> HttpResponse:
     """
 
     context = {
-        "BANNER": settings.HUMANS_TXT_BANNER,
-        "LAST_UPDATE": settings.HUMANS_TXT_LAST_UPDATE,
-        "LANGUAGES": settings.HUMANS_TXT_LANGUAGES,
-        "TEAM": Person.objects.all(),
-        "THANKS": Thank.objects.all(),
-        "STANDARDS": Standard.objects.all(),
-        "COMPONENTS": Component.objects.all(),
-        "SOFTWARE": Software.objects.all(),
+        "HUMANS_TXT_BANNER": settings.HUMANS_TXT_BANNER,
+        "HUMANS_TXT_LAST_UPDATE": settings.HUMANS_TXT_LAST_UPDATE,
+        "HUMANS_TXT_LANGUAGES": settings.HUMANS_TXT_LANGUAGES,
+        "HUMANS_TXT_TEAM": Person.objects.all(),
+        "HUMANS_TXT_THANKS": Thank.objects.all(),
+        "HUMANS_TXT_STANDARDS": Standard.objects.all(),
+        "HUMANS_TXT_COMPONENTS": Component.objects.all(),
+        "HUMANS_TXT_SOFTWARE": Software.objects.all(),
     }  # type: dict
 
     return render_to_response(

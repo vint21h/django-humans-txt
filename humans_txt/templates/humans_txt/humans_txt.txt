@@ -2,30 +2,30 @@
 {# humans_txt/templates/humans_txt/humans_txt.txt #}
 
 
-{% if BANNER %}
-    {{ BANNER }}
+{% if HUMANS_TXT_BANNER %}
+    {{ HUMANS_TXT_BANNER|safe }}
 {% endif %}
-{% if TEAM %}
+{% if HUMANS_TXT_TEAM %}
     /* TEAM */
-    {% for person in TEAM %}
+    {% for person in HUMANS_TXT_TEAM %}
         {{ person.title }}: {{ person.name }}
         {% if person.contact %}Contact: {{ person.contact }}{% endif %}
         {% if person.location %}Location: {{ person.location }}{% endif %}
         {% if person.twitter %}Twitter: {{ person.twitter }}{% endif %}
     {% endfor %}
 {% endif %}
-{% if THANKS %}
+{% if HUMANS_TXT_THANKS %}
     /* THANKS */
-    {% for thank in THANKS %}
+    {% for thank in HUMANS_TXT_THANKS %}
     {{ thank.name }}{% if thank.url %}: {{ thank.url }}{% endif %}
     {% endfor %}
 {% endif %}
-{% if LAST_UPDATE or STANDARDS or COMPONENTS or SOFTWARE %}
+{% if HUMANS_TXT_LAST_UPDATE or HUMANS_TXT_STANDARDS or HUMANS_TXT_COMPONENTS or HUMANS_TXT_SOFTWARE %}
     /* SITE */
 
-    {% if LAST_UPDATE %}Last update: {{ LAST_UPDATE|date:"c" }}{% endif %}
-    {% if LANGUAGES %}Language: {% for language in LANGUAGES %}{{ language }}{% if not forloop.last %} / {% endif %}{% endfor %}{% endif %}
-    {% if STANDARDS %}Standards: {% for standard in STANDARDS %}{{ standard.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}
-    {% if COMPONENTS %}Components: {% for component in COMPONENTS %}{{ component.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}
-    {% if SOFTWARE %}Software: {% for software in SOFTWARE %}{{ software.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}
+    {% if HUMANS_TXT_LAST_UPDATE %}Last update: {{ HUMANS_TXT_LAST_UPDATE|date:"c" }}{% endif %}
+    {% if HUMANS_TXT_LANGUAGES %}Language: {% for language in HUMANS_TXT_LANGUAGES %}{{ language }}{% if not forloop.last %} / {% endif %}{% endfor %}{% endif %}
+    {% if HUMANS_TXT_STANDARDS %}Standards: {% for standard in HUMANS_TXT_STANDARDS %}{{ standard.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}
+    {% if HUMANS_TXT_COMPONENTS %}Components: {% for component in HUMANS_TXT_COMPONENTS %}{{ component.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}
+    {% if HUMANS_TXT_SOFTWARE %}Software: {% for software in HUMANS_TXT_SOFTWARE %}{{ software.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}
 {% endif %}

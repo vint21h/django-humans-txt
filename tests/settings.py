@@ -64,5 +64,5 @@ HUMANS_TXT_BANNER = """
      _/ |             __/ |                                                                      
     |__/             |___/                                                                       
 """
-HUMANS_TXT_LAST_UPDATE = date.today()
+HUMANS_TXT_LAST_UPDATE = date(1991, 8, 24)
 HUMANS_TXT_LANGUAGES = ["en", "uk", ]
