@@ -4,9 +4,9 @@
 # settings/settings.py
 
 
+from datetime import date
 import pathlib
 import sys
-from datetime import date
 
 
 # black magic to use imports from library code
@@ -17,7 +17,10 @@ SECRET_KEY = "django-humans-txt-test-key"  # type: str
 
 # configure databases
 DATABASES = {
-    "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": "django-humans-txt-tests.sqlite3"}
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "django-humans-txt-tests.sqlite3",
+    }
 }  # type: dict
 
 # configure templates
@@ -32,7 +35,13 @@ TEMPLATES = [
 
 
 # add nose test runner application and humans_txt
-INSTALLED_APPS = ["django.contrib.admin", "django.contrib.auth", "django.contrib.contenttypes", "django_nose", "humans_txt"]  # type: list
+INSTALLED_APPS = [
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django_nose",
+    "humans_txt",
+]  # type: list
 
 # add nose test runner
 TEST_RUNNER = "django_nose.NoseTestSuiteRunner"  # type: str
@@ -55,14 +64,14 @@ ROOT_URLCONF = "humans_txt.urls"  # type: str
 
 # humans.txt settings
 HUMANS_TXT_BANNER = """
-     _ _                               _                                            _        _   
-    | (_)                             | |                                          | |      | |  
-  __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_ 
+     _ _                               _                                            _        _
+    | (_)                             | |                                          | |      | |
+  __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_
  / _` | |/ _` | '_ \ / _` |/ _ \______| '_ \| | | | '_ ` _ \ / _` | '_ \/ __|______| __\ \/ / __|
-| (_| | | (_| | | | | (_| | (_) |     | | | | |_| | | | | | | (_| | | | \__ \      | |_ >  <| |_ 
+| (_| | | (_| | | | | (_| | (_) |     | | | | |_| | | | | | | (_| | | | \__ \      | |_ >  <| |_
  \__,_| |\__,_|_| |_|\__, |\___/      |_| |_|\__,_|_| |_| |_|\__,_|_| |_|___/       \__/_/\_\\__|
-     _/ |             __/ |                                                                      
-    |__/             |___/                                                                       
-"""
+     _/ |             __/ |
+    |__/             |___/
+"""  # noqa: W605
 HUMANS_TXT_LAST_UPDATE = date(1991, 8, 24)
-HUMANS_TXT_LANGUAGES = ["en", "uk", ]
+HUMANS_TXT_LANGUAGES = ["en", "uk"]
