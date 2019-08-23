@@ -9,7 +9,7 @@ from django.test import TestCase
 from humans_txt.models.thank import Thank
 
 
-__all__ = ["ThankModelTest", ]  # type: list
+__all__ = ["ThankModelTest"]  # type: list
 
 
 class ThankModelTest(TestCase):
@@ -34,10 +34,7 @@ class ThankModelTest(TestCase):
 
         thank = Thank.objects.first()
 
-        self.assertEqual(
-            thank.__unicode__(),
-            "Alexei Andrushievich",
-        )
+        self.assertEqual(thank.__unicode__(), "Alexei Andrushievich")
 
     def test___repr__(self):
         """
@@ -46,10 +43,7 @@ class ThankModelTest(TestCase):
 
         thank = Thank.objects.first()
 
-        self.assertEqual(
-            thank.__repr__(),
-            "Alexei Andrushievich",
-        )
+        self.assertEqual(thank.__repr__(), "Alexei Andrushievich")
 
     def test___str__(self):
         """
@@ -58,7 +52,4 @@ class ThankModelTest(TestCase):
 
         thank = Thank.objects.first()
 
-        self.assertEqual(
-            thank.__str__(),
-            "Alexei Andrushievich",
-        )
+        self.assertEqual(thank.__str__(), "Alexei Andrushievich")

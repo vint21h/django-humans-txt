@@ -9,7 +9,7 @@ from django.test import TestCase
 from humans_txt.models.component import Component
 
 
-__all__ = ["ComponentModelTest", ]  # type: list
+__all__ = ["ComponentModelTest"]  # type: list
 
 
 class ComponentModelTest(TestCase):
@@ -32,10 +32,7 @@ class ComponentModelTest(TestCase):
 
         component = Component.objects.first()
 
-        self.assertEqual(
-            component.__unicode__(),
-            "Django",
-        )
+        self.assertEqual(component.__unicode__(), "Django")
 
     def test___repr__(self):
         """
@@ -44,10 +41,7 @@ class ComponentModelTest(TestCase):
 
         component = Component.objects.first()
 
-        self.assertEqual(
-            component.__repr__(),
-            "Django",
-        )
+        self.assertEqual(component.__repr__(), "Django")
 
     def test___str__(self):
         """
@@ -56,7 +50,4 @@ class ComponentModelTest(TestCase):
 
         component = Component.objects.first()
 
-        self.assertEqual(
-            component.__str__(),
-            "Django",
-        )
+        self.assertEqual(component.__str__(), "Django")

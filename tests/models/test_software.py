@@ -9,7 +9,7 @@ from django.test import TestCase
 from humans_txt.models.software import Software
 
 
-__all__ = ["SoftwareModelTest", ]  # type: list
+__all__ = ["SoftwareModelTest"]  # type: list
 
 
 class SoftwareModelTest(TestCase):
@@ -32,10 +32,7 @@ class SoftwareModelTest(TestCase):
 
         software = Software.objects.first()
 
-        self.assertEqual(
-            software.__unicode__(),
-            "tox",
-        )
+        self.assertEqual(software.__unicode__(), "tox")
 
     def test___repr__(self):
         """
@@ -44,10 +41,7 @@ class SoftwareModelTest(TestCase):
 
         software = Software.objects.first()
 
-        self.assertEqual(
-            software.__repr__(),
-            "tox",
-        )
+        self.assertEqual(software.__repr__(), "tox")
 
     def test___str__(self):
         """
@@ -56,7 +50,4 @@ class SoftwareModelTest(TestCase):
 
         software = Software.objects.first()
 
-        self.assertEqual(
-            software.__str__(),
-            "tox",
-        )
+        self.assertEqual(software.__str__(), "tox")

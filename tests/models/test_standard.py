@@ -9,7 +9,7 @@ from django.test import TestCase
 from humans_txt.models.standard import Standard
 
 
-__all__ = ["StandardModelTest", ]  # type: list
+__all__ = ["StandardModelTest"]  # type: list
 
 
 class StandardModelTest(TestCase):
@@ -32,10 +32,7 @@ class StandardModelTest(TestCase):
 
         standard = Standard.objects.first()
 
-        self.assertEqual(
-            standard.__unicode__(),
-            "PEP 8",
-        )
+        self.assertEqual(standard.__unicode__(), "PEP 8")
 
     def test___repr__(self):
         """
@@ -44,10 +41,7 @@ class StandardModelTest(TestCase):
 
         standard = Standard.objects.first()
 
-        self.assertEqual(
-            standard.__repr__(),
-            "PEP 8",
-        )
+        self.assertEqual(standard.__repr__(), "PEP 8")
 
     def test___str__(self):
         """
@@ -56,7 +50,4 @@ class StandardModelTest(TestCase):
 
         standard = Standard.objects.first()
 
-        self.assertEqual(
-            standard.__str__(),
-            "PEP 8",
-        )
+        self.assertEqual(standard.__str__(), "PEP 8")

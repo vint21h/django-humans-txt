@@ -8,6 +8,7 @@ from django.http import HttpRequest, HttpResponse
 from django.test import TestCase
 from django.test.utils import override_settings
 from django.urls import reverse
+from django.utils import translation
 
 from humans_txt.models.component import Component
 from humans_txt.models.person import Person
@@ -65,7 +66,8 @@ class HumansTxtViewTest(TestCase):
         :rtype: None.
         """
 
-        response = self.client.get(path=reverse("humans-txt"))
+        with translation.override("en"):
+            response = self.client.get(path=reverse("humans-txt"))
 
         self.assertTemplateUsed(
             response=response, template_name="humans_txt/humans_txt.txt"
@@ -105,7 +107,8 @@ class HumansTxtViewTest(TestCase):
         Components: Django
         Software: tox
         """  # noqa: W605
-        response = self.client.get(path=reverse("humans-txt"))
+        with translation.override("en"):
+            response = self.client.get(path=reverse("humans-txt"))
 
         self.assertIsNotNone(obj=response.context.get("HUMANS_TXT_BANNER"))
         self.assertIsNotNone(obj=response.context.get("HUMANS_TXT_TEAM"))
@@ -142,7 +145,8 @@ class HumansTxtViewTest(TestCase):
         Components: Django
         Software: tox
         """  # noqa: W605
-        response = self.client.get(path=reverse("humans-txt"))
+        with translation.override("en"):
+            response = self.client.get(path=reverse("humans-txt"))
 
         self.assertEqual(first="", second=response.context.get("HUMANS_TXT_BANNER"))
         self.assertInHTML(needle=expected, haystack=response.content.decode())
@@ -181,7 +185,8 @@ class HumansTxtViewTest(TestCase):
         Components: Django
         Software: tox
         """  # noqa: W605
-        response = self.client.get(path=reverse("humans-txt"))
+        with translation.override("en"):
+            response = self.client.get(path=reverse("humans-txt"))
 
         self.assertIsNone(obj=response.context.get("HUMANS_TXT_LAST_UPDATE"))
         self.assertInHTML(needle=expected, haystack=response.content.decode())
@@ -220,7 +225,8 @@ class HumansTxtViewTest(TestCase):
         Components: Django
         Software: tox
         """  # noqa: W605
-        response = self.client.get(path=reverse("humans-txt"))
+        with translation.override("en"):
+            response = self.client.get(path=reverse("humans-txt"))
 
         self.assertListEqual(
             list1=[], list2=response.context.get("HUMANS_TXT_LANGUAGES")
@@ -257,7 +263,8 @@ class HumansTxtViewTest(TestCase):
         Components: Django
         Software: tox
         """  # noqa: W605
-        response = self.client.get(path=reverse("humans-txt"))
+        with translation.override("en"):
+            response = self.client.get(path=reverse("humans-txt"))
 
         self.assertQuerysetEqual(
             qs=Person.objects.none(), values=response.context.get("HUMANS_TXT_TEAM")
@@ -299,7 +306,8 @@ class HumansTxtViewTest(TestCase):
         Components: Django
         Software: tox
         """  # noqa: W605
-        response = self.client.get(path=reverse("humans-txt"))
+        with translation.override("en"):
+            response = self.client.get(path=reverse("humans-txt"))
 
         self.assertQuerysetEqual(
             qs=Standard.objects.none(),
@@ -340,7 +348,8 @@ class HumansTxtViewTest(TestCase):
         Components: Django
         Software: tox
         """  # noqa: W605
-        response = self.client.get(path=reverse("humans-txt"))
+        with translation.override("en"):
+            response = self.client.get(path=reverse("humans-txt"))
 
         self.assertQuerysetEqual(
             qs=Thank.objects.none(), values=response.context.get("HUMANS_TXT_THANKS")
@@ -382,7 +391,8 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Software: tox
         """  # noqa: W605
-        response = self.client.get(path=reverse("humans-txt"))
+        with translation.override("en"):
+            response = self.client.get(path=reverse("humans-txt"))
 
         self.assertQuerysetEqual(
             qs=Component.objects.none(),
@@ -425,7 +435,8 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         """  # noqa: W605
-        response = self.client.get(path=reverse("humans-txt"))
+        with translation.override("en"):
+            response = self.client.get(path=reverse("humans-txt"))
 
         self.assertQuerysetEqual(
             qs=Software.objects.none(),

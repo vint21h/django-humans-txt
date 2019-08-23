@@ -3,4 +3,3 @@
 
 
  - Add rewritten translations harvesting and building target to Makefile
- - Made a deal with check-manifest about ".mo" files
