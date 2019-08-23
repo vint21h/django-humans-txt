@@ -9,11 +9,7 @@ from datetime import date
 from django.conf import settings
 
 
-__all__ = [
-    "BANNER",
-    "LAST_UPDATE",
-    "LANGUAGES",
-]
+__all__ = ["BANNER", "LAST_UPDATE", "LANGUAGES"]
 
 
 BANNER = getattr(settings, "HUMANS_TXT_BANNER", "")  # type: str

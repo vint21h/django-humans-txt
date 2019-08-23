@@ -7,9 +7,7 @@
 from django.contrib import admin
 
 
-__all__ = [
-    "ComponentAdmin",
-]
+__all__ = ["ComponentAdmin"]  # type: list
 
 
 class ComponentAdmin(admin.ModelAdmin):
@@ -17,5 +15,5 @@ class ComponentAdmin(admin.ModelAdmin):
     Customize Component model for admin area.
     """
 
-    list_display = ["name", ]
-    search_fields = ["name", ]
+    list_display = ["name"]  # type: list
+    search_fields = ["name"]  # type: list

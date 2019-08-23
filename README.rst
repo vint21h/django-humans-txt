@@ -15,46 +15,50 @@ Installation
 
 Configuration
 -------------
-Add ``"humans_txt"`` to ``settings.INSTALLED_APPS``.
+* Add ``"humans_txt"`` to ``settings.INSTALLED_APPS``:
 
 .. code-block:: python
+
+    # settings.py
 
     INSTALLED_APPS += (
         "humans_txt",
-    )
+    )  # type: tuple
 
-Add ``"humans_txt"`` to your urls definitions.
+* Add ``"humans_txt"`` to your URLs definitions:
 
 .. code-block:: python
 
+    # urls.py
+
     urlpatterns += [
         url(r"^humans\.txt", include("humans_txt.urls")),
-    )
+    )  # type: list
 
-Include ``"humans_txt/includes/humans_txt_meta.html"`` in your base template rel meta tag to ``<head>`` html tag .
+* Run ``python manage.py migrate`` in your project folder to apply app migrations.
 
-For example:
+django-humans-txt settings
+--------------------------
+``HUMANS_TXT_BANNER``
+    Contains a banner that placed at the start of humans.txt response. Defaults to ``""``.
+``HUMANS_TXT_LAST_UPDATE``
+    Contains project last update date. Defaults to ``None``.
+``HUMANS_TXT_LANGUAGES``
+    Contains list of site supported languages. Defaults to ``None``.
+
+Usage
+-----
+* Include ``"humans_txt/includes/humans_txt_meta.html"`` in your base template rel meta tag to ``<head>`` HTML tag:
 
 .. code-block:: django
+
+    {# base.html #}
 
     <head>
         {% include "humans_txt/includes/humans_txt_meta.html" %}
     </head>
 
-Run ``python manage.py migrate`` in your project folder to apply app migrations.
-
-Usage
------
-Just fill Django humans.txt models instances in your admin in your taste.
-
-Settings
---------
-``HUMANS_TXT_BANNER``
-    Contains an banner that placed at the start of humans.txt response. Defaults to ``""``.
-``HUMANS_TXT_LAST_UPDATE``
-    Contains project last update date. Defaults to ``None``.
-``HUMANS_TXT_LANGUAGES``
-    Contains list of site supported languages. Defaults to ``None``.
+* Just fill Django humans.txt models instances in your admin in your taste.
 
 Licensing
 ---------

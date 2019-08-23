@@ -7,9 +7,7 @@
 from django.contrib import admin
 
 
-__all__ = [
-    "ThankAdmin",
-]
+__all__ = ["ThankAdmin"]  # type: list
 
 
 class ThankAdmin(admin.ModelAdmin):
@@ -17,5 +15,5 @@ class ThankAdmin(admin.ModelAdmin):
     Customize Thank model for admin area.
     """
 
-    list_display = ["name", "url", ]
-    search_fields = ["name", "url", ]
+    list_display = ["name", "url"]  # type: list
+    search_fields = ["name", "url"]  # type: list

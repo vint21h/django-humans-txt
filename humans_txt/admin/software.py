@@ -7,9 +7,7 @@
 from django.contrib import admin
 
 
-__all__ = [
-    "SoftwareAdmin",
-]
+__all__ = ["SoftwareAdmin"]  # type: list
 
 
 class SoftwareAdmin(admin.ModelAdmin):
@@ -17,5 +15,5 @@ class SoftwareAdmin(admin.ModelAdmin):
     Customize Software model for admin area.
     """
 
-    list_display = ["name", ]
-    search_fields = ["name", ]
+    list_display = ["name"]  # type: list
+    search_fields = ["name"]  # type: list

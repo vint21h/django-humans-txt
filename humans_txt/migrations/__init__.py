@@ -4,4 +4,4 @@
 # humans_txt/migrations/__init__.py
 
 
-__all__ = []
+__all__ = []  # type: list

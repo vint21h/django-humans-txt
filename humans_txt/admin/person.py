@@ -7,9 +7,7 @@
 from django.contrib import admin
 
 
-__all__ = [
-    "PersonAdmin",
-]
+__all__ = ["PersonAdmin"]  # type: list
 
 
 class PersonAdmin(admin.ModelAdmin):
@@ -17,5 +15,5 @@ class PersonAdmin(admin.ModelAdmin):
     Customize Person model for admin area.
     """
 
-    list_display = ["name", "title", "contact", "twitter", "location", ]
-    search_fields = ["name", "title", "contact", "twitter", "location", ]
+    list_display = ["name", "title", "contact", "twitter", "location"]  # type: list
+    search_fields = ["name", "title", "contact", "twitter", "location"]  # type: list

@@ -8,9 +8,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 
-__all__ = [
-    "Standard",
-]
+__all__ = ["Standard"]  # type: list
 
 
 class Standard(models.Model):
@@ -18,14 +16,16 @@ class Standard(models.Model):
     Standard model.
     """
 
-    name = models.CharField(verbose_name=_("standard name"), max_length=256, db_index=True)
+    name = models.CharField(
+        verbose_name=_("standard name"), max_length=256, db_index=True
+    )
 
     class Meta:
 
-        app_label = "humans_txt"
-        verbose_name = _("standard")
-        verbose_name_plural = _("standards")
-        ordering = ["name", ]
+        app_label = "humans_txt"  # type: str
+        verbose_name = _("standard")  # type: str
+        verbose_name_plural = _("standards")  # type: str
+        ordering = ["name"]  # type: list
 
     def __unicode__(self) -> str:
 

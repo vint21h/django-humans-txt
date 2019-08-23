@@ -7,9 +7,7 @@
 from django.contrib import admin
 
 
-__all__ = [
-    "StandardAdmin",
-]
+__all__ = ["StandardAdmin"]  # type: list
 
 
 class StandardAdmin(admin.ModelAdmin):
@@ -17,5 +15,5 @@ class StandardAdmin(admin.ModelAdmin):
     Customize Standard model for admin area.
     """
 
-    list_display = ["name", ]
-    search_fields = ["name", ]
+    list_display = ["name"]  # type: list
+    search_fields = ["name"]  # type: list

@@ -1,0 +1,19 @@
+# django-humans-txt
+# .coveragerc
+
+
+[run]
+branch = True
+source = humans_txt
+omit =
+    */__init__.py
+   humans_txt/apps.py
+
+[report]
+omit =
+    */__init__.py
+    humans_txt/apps.py
+exclude_lines =
+    pragma: no cover
+
+[xml]

@@ -9,12 +9,8 @@ from django.conf.urls import url
 from humans_txt.views import humans_txt
 
 
-__all__ = [
-    "urlpatterns",
-]
+__all__ = ["urlpatterns"]
 
 
 # humans.txt urls
-urlpatterns = [
-    url(r"^$", humans_txt, name="humans_txt"),
-]  # type: list
+urlpatterns = [url(r"^$", humans_txt, name="humans_txt")]  # type: list

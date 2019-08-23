@@ -6,16 +6,16 @@
 
 from django.contrib import admin
 
-from humans_txt.models.component import Component
-from humans_txt.models.person import Person
-from humans_txt.models.software import Software
-from humans_txt.models.standard import Standard
-from humans_txt.models.thank import Thank
 from humans_txt.admin.component import ComponentAdmin
 from humans_txt.admin.person import PersonAdmin
 from humans_txt.admin.software import SoftwareAdmin
 from humans_txt.admin.standard import StandardAdmin
 from humans_txt.admin.thank import ThankAdmin
+from humans_txt.models.component import Component
+from humans_txt.models.person import Person
+from humans_txt.models.software import Software
+from humans_txt.models.standard import Standard
+from humans_txt.models.thank import Thank
 
 
 __all__ = [
@@ -24,7 +24,7 @@ __all__ = [
     "SoftwareAdmin",
     "StandardAdmin",
     "ThankAdmin",
-]
+]  # type: list
 
 
 # registering admin custom classes
