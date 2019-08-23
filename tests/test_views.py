@@ -34,7 +34,7 @@ class HumansTxtViewTest(TestCase):
         Component.objects.create(name="Django")
         Person.objects.create(
             name="Alexei Andrushievich",
-            title="Python developer",
+            title="Backend developer",
             contact="vint21h@vint21h.pp.ua",
             twitter="https://twitter.com/vint21h/",
             location="Ukraine",
@@ -90,7 +90,7 @@ class HumansTxtViewTest(TestCase):
             |__/             |___/
 
         /* TEAM */
-        Python developer: Alexei Andrushievich
+        Backend developer: Alexei Andrushievich
         Contact: vint21h@vint21h.pp.ua
         Location: Ukraine
         Twitter: https://twitter.com/vint21h/
@@ -127,7 +127,7 @@ class HumansTxtViewTest(TestCase):
 
         expected = """
         /* TEAM */
-        Python developer: Alexei Andrushievich
+        Backend developer: Alexei Andrushievich
         Contact: vint21h@vint21h.pp.ua
         Location: Ukraine
         Twitter: https://twitter.com/vint21h/
@@ -167,7 +167,7 @@ class HumansTxtViewTest(TestCase):
             |__/             |___/
 
         /* TEAM */
-        Python developer: Alexei Andrushievich
+        Backend developer: Alexei Andrushievich
         Contact: vint21h@vint21h.pp.ua
         Location: Ukraine
         Twitter: https://twitter.com/vint21h/
@@ -206,7 +206,7 @@ class HumansTxtViewTest(TestCase):
             |__/             |___/
 
         /* TEAM */
-        Python developer: Alexei Andrushievich
+        Backend developer: Alexei Andrushievich
         Contact: vint21h@vint21h.pp.ua
         Location: Ukraine
         Twitter: https://twitter.com/vint21h/
@@ -285,7 +285,7 @@ class HumansTxtViewTest(TestCase):
             |__/             |___/
 
         /* TEAM */
-        Python developer: Alexei Andrushievich
+        Backend developer: Alexei Andrushievich
         Contact: vint21h@vint21h.pp.ua
         Location: Ukraine
         Twitter: https://twitter.com/vint21h/
@@ -328,7 +328,7 @@ class HumansTxtViewTest(TestCase):
             |__/             |___/
 
         /* TEAM */
-        Python developer: Alexei Andrushievich
+        Backend developer: Alexei Andrushievich
         Contact: vint21h@vint21h.pp.ua
         Location: Ukraine
         Twitter: https://twitter.com/vint21h/
@@ -368,7 +368,7 @@ class HumansTxtViewTest(TestCase):
             |__/             |___/
 
         /* TEAM */
-        Python developer: Alexei Andrushievich
+        Backend developer: Alexei Andrushievich
         Contact: vint21h@vint21h.pp.ua
         Location: Ukraine
         Twitter: https://twitter.com/vint21h/
@@ -411,7 +411,7 @@ class HumansTxtViewTest(TestCase):
             |__/             |___/
 
         /* TEAM */
-        Python developer: Alexei Andrushievich
+        Backend developer: Alexei Andrushievich
         Contact: vint21h@vint21h.pp.ua
         Location: Ukraine
         Twitter: https://twitter.com/vint21h/
