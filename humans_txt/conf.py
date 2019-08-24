@@ -4,7 +4,7 @@
 # humans_txt/conf.py
 
 
-from datetime import date
+from datetime import date  # noqa: F401
 
 from appconf import AppConf
 from django.conf import settings
