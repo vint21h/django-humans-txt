@@ -88,7 +88,7 @@ For other authors list see AUTHORS file.
 .. |pypi-format| image:: https://img.shields.io/pypi/format/django-humans-txt
 .. |pypi-wheel| image:: https://img.shields.io/pypi/wheel/django-humans-txt
 .. |pypi-status| image:: https://img.shields.io/pypi/status/django-humans-txt
-.. _Travis: https://travis-ci.org/vint21h/django-xicon/
-.. _Coverage: https://www.codacy.com/app/vint21h/django-xicon
-.. _Codacy: https://www.codacy.com/app/vint21h/django-xicon
-.. _Requires: https://requires.io/github/vint21h/django-xicon/requirements/?branch=master
+.. _Travis: https://travis-ci.org/vint21h/django-humans-txt/
+.. _Coverage: https://www.codacy.com/app/vint21h/django-humans-txt
+.. _Codacy: https://www.codacy.com/app/vint21h/django-humans-txt
+.. _Requires: https://requires.io/github/vint21h/django-humans-txt/requirements/?branch=master
