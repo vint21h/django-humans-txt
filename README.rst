@@ -4,6 +4,8 @@
 A django-humans-txt documentation
 =================================
 
+|Travis|_ |Coverage|_ |Codacy|_ |Requires|_ |pypi-license| |pypi-version| |pypi-python-version| |pypi-django-version| |pypi-format| |pypi-wheel| |pypi-status|
+
     *django-humans-txt is a django reusable application to handle humans.txt (http://humanstxt.org/)*
 
 .. contents::
@@ -74,3 +76,19 @@ Contacts
 **Author**: Alexei Andrushievich <vint21h@vint21h.pp.ua>
 
 For other authors list see AUTHORS file.
+
+.. |Travis| image:: https://travis-ci.org/vint21h/django-humans-txt.svg?branch=master
+.. |Coverage| image:: https://api.codacy.com/project/badge/Coverage/6c967da4cf21436dacc49ca6961ea1b0
+.. |Codacy| image:: https://api.codacy.com/project/badge/Grade/6c967da4cf21436dacc49ca6961ea1b0
+.. |Requires| image:: https://requires.io/github/vint21h/django-humans-txt/requirements.svg?branch=master
+.. |pypi-license| image:: https://img.shields.io/pypi/l/django-humans-txt
+.. |pypi-version| image:: https://img.shields.io/pypi/v/django-humans-txt
+.. |pypi-django-version| image:: https://img.shields.io/pypi/djversions/django-humans-txt
+.. |pypi-python-version| image:: https://img.shields.io/pypi/pyversions/django-humans-txt
+.. |pypi-format| image:: https://img.shields.io/pypi/format/django-humans-txt
+.. |pypi-wheel| image:: https://img.shields.io/pypi/wheel/django-humans-txt
+.. |pypi-status| image:: https://img.shields.io/pypi/status/django-humans-txt
+.. _Travis: https://travis-ci.org/vint21h/django-xicon/
+.. _Coverage: https://www.codacy.com/app/vint21h/django-xicon
+.. _Codacy: https://www.codacy.com/app/vint21h/django-xicon
+.. _Requires: https://requires.io/github/vint21h/django-xicon/requirements/?branch=master
