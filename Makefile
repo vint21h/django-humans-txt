@@ -1,4 +1,4 @@
-# humans_txt
+# django-humans-txt
 # Makefile
 
 
