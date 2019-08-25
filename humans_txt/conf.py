@@ -23,4 +23,5 @@ class DjangoHumansTxtAppConf(AppConf):
     LANGUAGES = getattr(settings, "HUMANS_TXT_LANGUAGES", None)  # type: list
 
     class Meta:
+
         prefix = "humans_txt"
