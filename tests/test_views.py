@@ -106,7 +106,7 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # noqa: W605
+        """  # noqa: W605, type: str
         with translation.override("en"):
             response = self.client.get(path=reverse("humans-txt"))
 
@@ -144,11 +144,11 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # noqa: W605
+        """  # noqa: W605, type: str
         with translation.override("en"):
             response = self.client.get(path=reverse("humans-txt"))
 
-        self.assertEqual(first="", second=response.context.get("HUMANS_TXT_BANNER"))
+        self.assertEqual(first=response.context.get("HUMANS_TXT_BANNER"), second="")
         self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
     @override_settings(HUMANS_TXT_LAST_UPDATE=None)
@@ -184,7 +184,7 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # noqa: W605
+        """  # noqa: W605, type: str
         with translation.override("en"):
             response = self.client.get(path=reverse("humans-txt"))
 
@@ -224,12 +224,12 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # noqa: W605
+        """  # noqa: W605, type: str
         with translation.override("en"):
             response = self.client.get(path=reverse("humans-txt"))
 
         self.assertListEqual(
-            list1=[], list2=response.context.get("HUMANS_TXT_LANGUAGES")
+            list1=response.context.get("HUMANS_TXT_LANGUAGES"), list2=[]
         )
         self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
@@ -262,12 +262,12 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # noqa: W605
+        """  # noqa: W605, type: str
         with translation.override("en"):
             response = self.client.get(path=reverse("humans-txt"))
 
         self.assertQuerysetEqual(
-            qs=Person.objects.none(), values=response.context.get("HUMANS_TXT_TEAM")
+            qs=response.context.get("HUMANS_TXT_TEAM"), values=Person.objects.none()
         )
         self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
@@ -305,13 +305,13 @@ class HumansTxtViewTest(TestCase):
         Language: en / uk
         Components: Django
         Software: tox
-        """  # noqa: W605
+        """  # noqa: W605, type: str
         with translation.override("en"):
             response = self.client.get(path=reverse("humans-txt"))
 
         self.assertQuerysetEqual(
-            qs=Standard.objects.none(),
-            values=response.context.get("HUMANS_TXT_STANDARDS"),
+            qs=response.context.get("HUMANS_TXT_STANDARDS"),
+            values=Standard.objects.none(),
         )
         self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
@@ -347,12 +347,12 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # noqa: W605
+        """  # noqa: W605, type: str
         with translation.override("en"):
             response = self.client.get(path=reverse("humans-txt"))
 
         self.assertQuerysetEqual(
-            qs=Thank.objects.none(), values=response.context.get("HUMANS_TXT_THANKS")
+            qs=response.context.get("HUMANS_TXT_THANKS"), values=Thank.objects.none()
         )
         self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
@@ -390,13 +390,13 @@ class HumansTxtViewTest(TestCase):
         Language: en / uk
         Standards: PEP 8
         Software: tox
-        """  # noqa: W605
+        """  # noqa: W605, type: str
         with translation.override("en"):
             response = self.client.get(path=reverse("humans-txt"))
 
         self.assertQuerysetEqual(
-            qs=Component.objects.none(),
-            values=response.context.get("HUMANS_TXT_COMPONENTS"),
+            qs=response.context.get("HUMANS_TXT_COMPONENTS"),
+            values=Component.objects.none(),
         )
         self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
@@ -434,12 +434,12 @@ class HumansTxtViewTest(TestCase):
         Language: en / uk
         Standards: PEP 8
         Components: Django
-        """  # noqa: W605
+        """  # noqa: W605, type: str
         with translation.override("en"):
             response = self.client.get(path=reverse("humans-txt"))
 
         self.assertQuerysetEqual(
-            qs=Software.objects.none(),
-            values=response.context.get("HUMANS_TXT_SOFTWARE"),
+            qs=response.context.get("HUMANS_TXT_SOFTWARE"),
+            values=Software.objects.none(),
         )
         self.assertHTMLEqual(html1=response.content.decode(), html2=expected)

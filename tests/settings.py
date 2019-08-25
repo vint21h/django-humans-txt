@@ -72,6 +72,6 @@ HUMANS_TXT_BANNER = """
  \__,_| |\__,_|_| |_|\__, |\___/      |_| |_|\__,_|_| |_| |_|\__,_|_| |_|___/       \__/_/\_\\__|
      _/ |             __/ |
     |__/             |___/
-"""  # noqa: W605
+"""  # noqa: W605, type: str
 HUMANS_TXT_LAST_UPDATE = date(1991, 8, 24)
 HUMANS_TXT_LANGUAGES = ["en", "uk"]

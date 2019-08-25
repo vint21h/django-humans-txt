@@ -35,7 +35,7 @@ Configuration
 
     urlpatterns += [
         url(r"^humans\.txt", include("humans_txt.urls")),
-    )  # type: list
+    ]  # type: list
 
 * Run ``python manage.py migrate`` in your project folder to apply app migrations.
 
