@@ -117,7 +117,7 @@ class HumansTxtViewTest(TestCase):
         self.assertIsNotNone(obj=response.context.get("HUMANS_TXT_STANDARDS"))
         self.assertIsNotNone(obj=response.context.get("HUMANS_TXT_COMPONENTS"))
         self.assertIsNotNone(obj=response.context.get("HUMANS_TXT_SOFTWARE"))
-        self.assertInHTML(needle=expected, haystack=response.content.decode())
+        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
     @override_settings(HUMANS_TXT_BANNER="")
     def test_humans_txt__render__without_banner(self) -> None:
@@ -149,7 +149,7 @@ class HumansTxtViewTest(TestCase):
             response = self.client.get(path=reverse("humans-txt"))
 
         self.assertEqual(first="", second=response.context.get("HUMANS_TXT_BANNER"))
-        self.assertInHTML(needle=expected, haystack=response.content.decode())
+        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
     @override_settings(HUMANS_TXT_LAST_UPDATE=None)
     def test_humans_txt__render__without_last_update(self) -> None:
@@ -189,7 +189,7 @@ class HumansTxtViewTest(TestCase):
             response = self.client.get(path=reverse("humans-txt"))
 
         self.assertIsNone(obj=response.context.get("HUMANS_TXT_LAST_UPDATE"))
-        self.assertInHTML(needle=expected, haystack=response.content.decode())
+        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
     @override_settings(HUMANS_TXT_LANGUAGES=[])
     def test_humans_txt__render__without_languages(self) -> None:
@@ -231,7 +231,7 @@ class HumansTxtViewTest(TestCase):
         self.assertListEqual(
             list1=[], list2=response.context.get("HUMANS_TXT_LANGUAGES")
         )
-        self.assertInHTML(needle=expected, haystack=response.content.decode())
+        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
     def test_humans_txt__render__without_team(self) -> None:
         """
@@ -269,7 +269,7 @@ class HumansTxtViewTest(TestCase):
         self.assertQuerysetEqual(
             qs=Person.objects.none(), values=response.context.get("HUMANS_TXT_TEAM")
         )
-        self.assertInHTML(needle=expected, haystack=response.content.decode())
+        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
     def test_humans_txt__render__without_standards(self) -> None:
         """
@@ -313,7 +313,7 @@ class HumansTxtViewTest(TestCase):
             qs=Standard.objects.none(),
             values=response.context.get("HUMANS_TXT_STANDARDS"),
         )
-        self.assertInHTML(needle=expected, haystack=response.content.decode())
+        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
     def test_humans_txt__render__without_thanks(self) -> None:
         """
@@ -354,7 +354,7 @@ class HumansTxtViewTest(TestCase):
         self.assertQuerysetEqual(
             qs=Thank.objects.none(), values=response.context.get("HUMANS_TXT_THANKS")
         )
-        self.assertInHTML(needle=expected, haystack=response.content.decode())
+        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
     def test_humans_txt__render__without_components(self) -> None:
         """
@@ -398,7 +398,7 @@ class HumansTxtViewTest(TestCase):
             qs=Component.objects.none(),
             values=response.context.get("HUMANS_TXT_COMPONENTS"),
         )
-        self.assertInHTML(needle=expected, haystack=response.content.decode())
+        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
 
     def test_humans_txt__render__without_software(self) -> None:
         """
@@ -442,4 +442,4 @@ class HumansTxtViewTest(TestCase):
             qs=Software.objects.none(),
             values=response.context.get("HUMANS_TXT_SOFTWARE"),
         )
-        self.assertInHTML(needle=expected, haystack=response.content.decode())
+        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)

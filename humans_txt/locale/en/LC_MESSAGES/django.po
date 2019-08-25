@@ -4,8 +4,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: django-simple-help\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: django-humans-txt 0.2.2\n"
+"Report-Msgid-Bugs-To: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
 "POT-Creation-Date: 2019-08-24 03:09+0300\n"
 "PO-Revision-Date: 2018-09-29 16:48+000\n"
 "Last-Translator: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
