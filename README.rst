@@ -25,7 +25,7 @@ Configuration
 
     INSTALLED_APPS += (
         "humans_txt",
-    )  # type: tuple
+    )
 
 * Add ``"humans_txt"`` to your URLs definitions:
 
@@ -35,7 +35,7 @@ Configuration
 
     urlpatterns += [
         url(r"^humans\.txt", include("humans_txt.urls")),
-    ]  # type: list
+    ]
 
 * Run ``python manage.py migrate`` in your project folder to apply app migrations.
 

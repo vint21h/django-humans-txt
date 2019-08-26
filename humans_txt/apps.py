@@ -12,6 +12,10 @@ __all__ = ["DjangoHumansTxtConfig"]  # type: list
 
 
 class DjangoHumansTxtConfig(AppConfig):
+    """
+    Django humans.txt config.
 
-    name = "humans_txt"
-    verbose_name = _("Django humans.txt")
+    """
+
+    name = "humans_txt"  # type: str
+    verbose_name = _("Django humans.txt")  # type: str

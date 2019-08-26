@@ -24,4 +24,4 @@ class DjangoHumansTxtAppConf(AppConf):
 
     class Meta:
 
-        prefix = "humans_txt"
+        prefix = "humans_txt"  # type: str

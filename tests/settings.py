@@ -73,5 +73,5 @@ HUMANS_TXT_BANNER = """
      _/ |             __/ |
     |__/             |___/
 """  # noqa: W605, type: str
-HUMANS_TXT_LAST_UPDATE = date(1991, 8, 24)
-HUMANS_TXT_LANGUAGES = ["en", "uk"]
+HUMANS_TXT_LAST_UPDATE = date(1991, 8, 24)  # type: date
+HUMANS_TXT_LANGUAGES = ["en", "uk"]  # type: list
