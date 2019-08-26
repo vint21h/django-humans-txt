@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # django-humans-txt
-# settings/settings.py
+# tests/settings.py
 
 
 from datetime import date
