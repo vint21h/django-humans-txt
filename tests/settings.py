@@ -34,7 +34,7 @@ TEMPLATES = [
 ]  # type: list
 
 
-# add nose test runner application and humans_txt
+# add testing related apps
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
