@@ -4,12 +4,14 @@
 # tests/models/test_thank.py
 
 
+from typing import List  # pylint: disable=W0611
+
 from django.test import TestCase
 
 from humans_txt.models.thank import Thank
 
 
-__all__ = ["ThankModelTest"]  # type: list
+__all__ = ["ThankModelTest"]  # type: List[str]
 
 
 class ThankModelTest(TestCase):

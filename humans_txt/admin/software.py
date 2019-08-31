@@ -4,10 +4,12 @@
 # humans_txt/admin/software.py
 
 
+from typing import List  # pylint: disable=W0611
+
 from django.contrib import admin
 
 
-__all__ = ["SoftwareAdmin"]  # type: list
+__all__ = ["SoftwareAdmin"]  # type: List[str]
 
 
 class SoftwareAdmin(admin.ModelAdmin):
@@ -15,5 +17,5 @@ class SoftwareAdmin(admin.ModelAdmin):
     Customize Software model for admin area.
     """
 
-    list_display = ["name"]  # type: list
-    search_fields = ["name"]  # type: list
+    list_display = ["name"]  # type: List[str]
+    search_fields = ["name"]  # type: List[str]

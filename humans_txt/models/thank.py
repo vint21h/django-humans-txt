@@ -4,11 +4,13 @@
 # humans_txt/models/thank.py
 
 
+from typing import List  # pylint: disable=W0611
+
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 
-__all__ = ["Thank"]
+__all__ = ["Thank"]  # type: List[str]
 
 
 class Thank(models.Model):
@@ -34,7 +36,7 @@ class Thank(models.Model):
         app_label = "humans_txt"  # type: str
         verbose_name = _("thank")  # type: str
         verbose_name_plural = _("thanks")  # type: str
-        ordering = ["name"]  # type: list
+        ordering = ["name"]  # type: List[str]
 
     def __unicode__(self) -> str:
 

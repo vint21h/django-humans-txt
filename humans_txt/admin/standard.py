@@ -4,10 +4,12 @@
 # humans_txt/admin/standard.py
 
 
+from typing import List  # pylint: disable=W0611
+
 from django.contrib import admin
 
 
-__all__ = ["StandardAdmin"]  # type: list
+__all__ = ["StandardAdmin"]  # type: List[str]
 
 
 class StandardAdmin(admin.ModelAdmin):
@@ -15,5 +17,5 @@ class StandardAdmin(admin.ModelAdmin):
     Customize Standard model for admin area.
     """
 
-    list_display = ["name"]  # type: list
-    search_fields = ["name"]  # type: list
+    list_display = ["name"]  # type: List[str]
+    search_fields = ["name"]  # type: List[str]

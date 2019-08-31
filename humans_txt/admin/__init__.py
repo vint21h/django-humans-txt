@@ -4,6 +4,8 @@
 # humans_txt/admin/__init__.py
 
 
+from typing import List  # pylint: disable=W0611
+
 from django.contrib import admin
 
 from humans_txt.admin.component import ComponentAdmin
@@ -24,7 +26,7 @@ __all__ = [
     "SoftwareAdmin",
     "StandardAdmin",
     "ThankAdmin",
-]  # type: list
+]  # type: List[str]
 
 
 # registering admin custom classes

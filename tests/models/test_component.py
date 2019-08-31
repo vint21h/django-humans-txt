@@ -4,12 +4,14 @@
 # tests/models/test_component.py
 
 
+from typing import List  # pylint: disable=W0611
+
 from django.test import TestCase
 
 from humans_txt.models.component import Component
 
 
-__all__ = ["ComponentModelTest"]  # type: list
+__all__ = ["ComponentModelTest"]  # type: List[str]
 
 
 class ComponentModelTest(TestCase):

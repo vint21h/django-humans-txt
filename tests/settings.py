@@ -7,6 +7,7 @@
 from datetime import date
 import pathlib
 import sys
+from typing import Dict, List, Union  # pylint: disable=W0611
 
 
 # black magic to use imports from library code
@@ -21,7 +22,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": "django-humans-txt-tests.sqlite3",
     }
-}  # type: dict
+}  # type: Dict[str, Dict[str, str]]
 
 # configure templates
 TEMPLATES = [
@@ -31,7 +32,7 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {},
     }
-]  # type: list
+]  # type: List[Dict[str, Union[str, List[str], bool, Dict[str, str]]]]
 
 
 # add testing related apps
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django_nose",
     "humans_txt",
-]  # type: list
+]  # type: List[str]
 
 # add nose test runner
 TEST_RUNNER = "django_nose.NoseTestSuiteRunner"  # type: str
@@ -57,7 +58,7 @@ NOSE_ARGS = [
     "--cover-erase",
     "--cover-package=humans_txt",
     "--logging-clear-handlers",
-]  # type: list
+]  # type: List[str]
 
 # configure urls
 ROOT_URLCONF = "humans_txt.urls"  # type: str
@@ -74,4 +75,4 @@ HUMANS_TXT_BANNER = """
     |__/             |___/
 """  # noqa: W605, E501, type: str
 HUMANS_TXT_LAST_UPDATE = date(1991, 8, 24)  # type: date
-HUMANS_TXT_LANGUAGES = ["en", "uk"]  # type: list
+HUMANS_TXT_LANGUAGES = ["en", "uk"]  # type: List[str]

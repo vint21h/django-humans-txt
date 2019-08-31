@@ -4,6 +4,8 @@
 # humans_txt/views.py
 
 
+from typing import Dict, List, Union  # noqa: F401, pylint: disable=W0611
+
 from django.http import HttpResponse
 from django.http.request import HttpRequest
 from django.shortcuts import render_to_response
@@ -16,7 +18,7 @@ from humans_txt.models.standard import Standard
 from humans_txt.models.thank import Thank
 
 
-__all__ = ["humans_txt"]  # type: list
+__all__ = ["humans_txt"]  # type: List[str]
 
 
 def humans_txt(request: HttpRequest) -> HttpResponse:
@@ -38,7 +40,7 @@ def humans_txt(request: HttpRequest) -> HttpResponse:
         "HUMANS_TXT_STANDARDS": Standard.objects.all(),
         "HUMANS_TXT_COMPONENTS": Component.objects.all(),
         "HUMANS_TXT_SOFTWARE": Software.objects.all(),
-    }  # type: dict
+    }  # noqa: E501 type: Dict[str, Union[str, List[str], Person, Thank, Standard, Component, Software]]
 
     return render_to_response(
         "humans_txt/humans_txt.txt",
