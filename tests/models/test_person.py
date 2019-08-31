@@ -49,7 +49,9 @@ class PersonModelTest(TestCase):
 
         person = Person.objects.first()  # type: Person
 
-        self.assertEqual(first=person.__repr__(), second="Backend developer: Alexei Andrushievich")
+        self.assertEqual(
+            first=person.__repr__(), second="Backend developer: Alexei Andrushievich"
+        )
 
     def test___str__(self):
         """
@@ -58,4 +60,6 @@ class PersonModelTest(TestCase):
 
         person = Person.objects.first()  # type: Person
 
-        self.assertEqual(first=person.__str__(), second="Backend developer: Alexei Andrushievich")
+        self.assertEqual(
+            first=person.__str__(), second="Backend developer: Alexei Andrushievich"
+        )

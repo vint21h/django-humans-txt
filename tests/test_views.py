@@ -4,12 +4,12 @@
 # tests/test_views.py
 
 
+from django.core.handlers.wsgi import WSGIRequest
 from django.http import HttpRequest, HttpResponse
 from django.test import TestCase
 from django.test.utils import override_settings
 from django.urls import reverse
 from django.utils import translation
-from django.core.handlers.wsgi import WSGIRequest
 
 from humans_txt.models.component import Component
 from humans_txt.models.person import Person
@@ -229,9 +229,7 @@ class HumansTxtViewTest(TestCase):
         with translation.override("en"):
             result = self.client.get(path=reverse("humans-txt"))  # type: WSGIRequest
 
-        self.assertListEqual(
-            list1=result.context.get("HUMANS_TXT_LANGUAGES"), list2=[]
-        )
+        self.assertListEqual(list1=result.context.get("HUMANS_TXT_LANGUAGES"), list2=[])
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     def test_humans_txt__render__without_team(self) -> None:
@@ -440,7 +438,6 @@ class HumansTxtViewTest(TestCase):
             result = self.client.get(path=reverse("humans-txt"))  # type: WSGIRequest
 
         self.assertQuerysetEqual(
-            qs=result.context.get("HUMANS_TXT_SOFTWARE"),
-            values=Software.objects.none(),
+            qs=result.context.get("HUMANS_TXT_SOFTWARE"), values=Software.objects.none()
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
