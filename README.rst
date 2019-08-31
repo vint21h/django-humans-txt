@@ -4,7 +4,7 @@
 A django-humans-txt documentation
 =================================
 
-|Travis|_ |Coverage|_ |Codacy|_ |Requires|_ |pypi-license| |pypi-version| |pypi-python-version| |pypi-django-version| |pypi-format| |pypi-wheel| |pypi-status|
+|Travis|_ |Coverage|_ |Codacy|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
 
     *django-humans-txt is a django reusable application to handle humans.txt (http://humanstxt.org/)*
 
@@ -92,3 +92,10 @@ For other authors list see AUTHORS file.
 .. _Coverage: https://www.codacy.com/app/vint21h/django-humans-txt
 .. _Codacy: https://www.codacy.com/app/vint21h/django-humans-txt
 .. _Requires: https://requires.io/github/vint21h/django-humans-txt/requirements/?branch=master
+.. _pypi-license: https://pypi.org/project/django-humans-txt/
+.. _pypi-version: https://pypi.org/project/django-humans-txt/
+.. _pypi-django-version: https://pypi.org/project/django-humans-txt/
+.. _pypi-python-version: https://pypi.org/project/django-humans-txt/
+.. _pypi-format: https://pypi.org/project/django-humans-txt/
+.. _pypi-wheel: https://pypi.org/project/django-humans-txt/
+.. _pypi-status: https://pypi.org/project/django-humans-txt/
