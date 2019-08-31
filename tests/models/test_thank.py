@@ -32,24 +32,24 @@ class ThankModelTest(TestCase):
         __unicode__ method must return thank name.
         """
 
-        thank = Thank.objects.first()
+        thank = Thank.objects.first()  # type: Thank
 
-        self.assertEqual(thank.__unicode__(), "Alexei Andrushievich")
+        self.assertEqual(first=thank.__unicode__(), second="Alexei Andrushievich")
 
     def test___repr__(self):
         """
         __repr__ method must return thank name.
         """
 
-        thank = Thank.objects.first()
+        thank = Thank.objects.first()  # type: Thank
 
-        self.assertEqual(thank.__repr__(), "Alexei Andrushievich")
+        self.assertEqual(first=thank.__repr__(), second="Alexei Andrushievich")
 
     def test___str__(self):
         """
         __str__ method must return thank name.
         """
 
-        thank = Thank.objects.first()
+        thank = Thank.objects.first()  # type: Thank
 
-        self.assertEqual(thank.__str__(), "Alexei Andrushievich")
+        self.assertEqual(first=thank.__str__(), second="Alexei Andrushievich")

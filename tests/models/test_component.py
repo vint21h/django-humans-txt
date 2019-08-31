@@ -30,24 +30,24 @@ class ComponentModelTest(TestCase):
         __unicode__ method must return component name.
         """
 
-        component = Component.objects.first()
+        component = Component.objects.first()  # type: Component
 
-        self.assertEqual(component.__unicode__(), "Django")
+        self.assertEqual(first=component.__unicode__(), second="Django")
 
     def test___repr__(self):
         """
         __repr__ method must return component name.
         """
 
-        component = Component.objects.first()
+        component = Component.objects.first()  # type: Component
 
-        self.assertEqual(component.__repr__(), "Django")
+        self.assertEqual(first=component.__repr__(), second="Django")
 
     def test___str__(self):
         """
         __str__ method must return component name.
         """
 
-        component = Component.objects.first()
+        component = Component.objects.first()  # type: Component
 
-        self.assertEqual(component.__str__(), "Django")
+        self.assertEqual(first=component.__str__(), second="Django")

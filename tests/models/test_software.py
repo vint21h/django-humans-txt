@@ -30,24 +30,24 @@ class SoftwareModelTest(TestCase):
         __unicode__ method must return software name.
         """
 
-        software = Software.objects.first()
+        software = Software.objects.first()  # type: Software
 
-        self.assertEqual(software.__unicode__(), "tox")
+        self.assertEqual(first=software.__unicode__(), second="tox")
 
     def test___repr__(self):
         """
         __repr__ method must return software name.
         """
 
-        software = Software.objects.first()
+        software = Software.objects.first()  # type: Software
 
-        self.assertEqual(software.__repr__(), "tox")
+        self.assertEqual(first=software.__repr__(), second="tox")
 
     def test___str__(self):
         """
         __str__ method must return software name.
         """
 
-        software = Software.objects.first()
+        software = Software.objects.first()  # type: Software
 
-        self.assertEqual(software.__str__(), "tox")
+        self.assertEqual(first=software.__str__(), second="tox")

@@ -36,10 +36,10 @@ class PersonModelTest(TestCase):
         __unicode__ method must return formatted person title and name.
         """
 
-        person = Person.objects.first()
+        person = Person.objects.first()  # type: Person
 
         self.assertEqual(
-            person.__unicode__(), "Backend developer: Alexei Andrushievich"
+            first=person.__unicode__(), second="Backend developer: Alexei Andrushievich"
         )
 
     def test___repr__(self):
@@ -47,15 +47,15 @@ class PersonModelTest(TestCase):
         __repr__ method must return formatted person title and name.
         """
 
-        person = Person.objects.first()
+        person = Person.objects.first()  # type: Person
 
-        self.assertEqual(person.__repr__(), "Backend developer: Alexei Andrushievich")
+        self.assertEqual(first=person.__repr__(), second="Backend developer: Alexei Andrushievich")
 
     def test___str__(self):
         """
         __str__ method must return formatted person title and name.
         """
 
-        person = Person.objects.first()
+        person = Person.objects.first()  # type: Person
 
-        self.assertEqual(person.__str__(), "Backend developer: Alexei Andrushievich")
+        self.assertEqual(first=person.__str__(), second="Backend developer: Alexei Andrushievich")

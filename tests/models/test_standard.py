@@ -30,24 +30,24 @@ class StandardModelTest(TestCase):
         __unicode__ method must return standard name.
         """
 
-        standard = Standard.objects.first()
+        standard = Standard.objects.first()  # type: Standard
 
-        self.assertEqual(standard.__unicode__(), "PEP 8")
+        self.assertEqual(first=standard.__unicode__(), second="PEP 8")
 
     def test___repr__(self):
         """
         __repr__ method must return standard name.
         """
 
-        standard = Standard.objects.first()
+        standard = Standard.objects.first()  # type: Standard
 
-        self.assertEqual(standard.__repr__(), "PEP 8")
+        self.assertEqual(first=standard.__repr__(), second="PEP 8")
 
     def test___str__(self):
         """
         __str__ method must return standard name.
         """
 
-        standard = Standard.objects.first()
+        standard = Standard.objects.first()  # type: Standard
 
-        self.assertEqual(standard.__str__(), "PEP 8")
+        self.assertEqual(first=standard.__str__(), second="PEP 8")

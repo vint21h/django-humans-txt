@@ -9,6 +9,7 @@ from django.test import TestCase
 from django.test.utils import override_settings
 from django.urls import reverse
 from django.utils import translation
+from django.core.handlers.wsgi import WSGIRequest
 
 from humans_txt.models.component import Component
 from humans_txt.models.person import Person
@@ -54,7 +55,7 @@ class HumansTxtViewTest(TestCase):
         :rtype: None.
         """
 
-        request = HttpRequest()
+        request = HttpRequest()  # type: HttpRequest
 
         self.assertIsInstance(obj=humans_txt(request=request), cls=HttpResponse)
 
@@ -67,10 +68,10 @@ class HumansTxtViewTest(TestCase):
         """
 
         with translation.override("en"):
-            response = self.client.get(path=reverse("humans-txt"))
+            result = self.client.get(path=reverse("humans-txt"))  # type: WSGIRequest
 
         self.assertTemplateUsed(
-            response=response, template_name="humans_txt/humans_txt.txt"
+            response=result, template_name="humans_txt/humans_txt.txt"
         )
 
     def test_humans_txt__render(self) -> None:
@@ -108,16 +109,16 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # noqa: W605, E501, type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("humans-txt"))
+            result = self.client.get(path=reverse("humans-txt"))  # type: WSGIRequest
 
-        self.assertIsNotNone(obj=response.context.get("HUMANS_TXT_BANNER"))
-        self.assertIsNotNone(obj=response.context.get("HUMANS_TXT_TEAM"))
-        self.assertIsNotNone(obj=response.context.get("HUMANS_TXT_THANKS"))
-        self.assertIsNotNone(obj=response.context.get("HUMANS_TXT_LAST_UPDATE"))
-        self.assertIsNotNone(obj=response.context.get("HUMANS_TXT_STANDARDS"))
-        self.assertIsNotNone(obj=response.context.get("HUMANS_TXT_COMPONENTS"))
-        self.assertIsNotNone(obj=response.context.get("HUMANS_TXT_SOFTWARE"))
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertIsNotNone(obj=result.context.get("HUMANS_TXT_BANNER"))
+        self.assertIsNotNone(obj=result.context.get("HUMANS_TXT_TEAM"))
+        self.assertIsNotNone(obj=result.context.get("HUMANS_TXT_THANKS"))
+        self.assertIsNotNone(obj=result.context.get("HUMANS_TXT_LAST_UPDATE"))
+        self.assertIsNotNone(obj=result.context.get("HUMANS_TXT_STANDARDS"))
+        self.assertIsNotNone(obj=result.context.get("HUMANS_TXT_COMPONENTS"))
+        self.assertIsNotNone(obj=result.context.get("HUMANS_TXT_SOFTWARE"))
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     @override_settings(HUMANS_TXT_BANNER="")
     def test_humans_txt__render__without_banner(self) -> None:
@@ -146,10 +147,10 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # noqa: W605, type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("humans-txt"))
+            result = self.client.get(path=reverse("humans-txt"))  # type: WSGIRequest
 
-        self.assertEqual(first=response.context.get("HUMANS_TXT_BANNER"), second="")
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertEqual(first=result.context.get("HUMANS_TXT_BANNER"), second="")
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     @override_settings(HUMANS_TXT_LAST_UPDATE=None)
     def test_humans_txt__render__without_last_update(self) -> None:
@@ -186,10 +187,10 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # noqa: W605, E501, type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("humans-txt"))
+            result = self.client.get(path=reverse("humans-txt"))  # type: WSGIRequest
 
-        self.assertIsNone(obj=response.context.get("HUMANS_TXT_LAST_UPDATE"))
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertIsNone(obj=result.context.get("HUMANS_TXT_LAST_UPDATE"))
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     @override_settings(HUMANS_TXT_LANGUAGES=[])
     def test_humans_txt__render__without_languages(self) -> None:
@@ -226,12 +227,12 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # noqa: W605, E501, type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("humans-txt"))
+            result = self.client.get(path=reverse("humans-txt"))  # type: WSGIRequest
 
         self.assertListEqual(
-            list1=response.context.get("HUMANS_TXT_LANGUAGES"), list2=[]
+            list1=result.context.get("HUMANS_TXT_LANGUAGES"), list2=[]
         )
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     def test_humans_txt__render__without_team(self) -> None:
         """
@@ -264,12 +265,12 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # noqa: W605, E501, type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("humans-txt"))
+            result = self.client.get(path=reverse("humans-txt"))  # type: WSGIRequest
 
         self.assertQuerysetEqual(
-            qs=response.context.get("HUMANS_TXT_TEAM"), values=Person.objects.none()
+            qs=result.context.get("HUMANS_TXT_TEAM"), values=Person.objects.none()
         )
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     def test_humans_txt__render__without_standards(self) -> None:
         """
@@ -307,13 +308,13 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # noqa: W605, E501, type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("humans-txt"))
+            result = self.client.get(path=reverse("humans-txt"))  # type: WSGIRequest
 
         self.assertQuerysetEqual(
-            qs=response.context.get("HUMANS_TXT_STANDARDS"),
+            qs=result.context.get("HUMANS_TXT_STANDARDS"),
             values=Standard.objects.none(),
         )
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     def test_humans_txt__render__without_thanks(self) -> None:
         """
@@ -349,12 +350,12 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # noqa: W605, E501, type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("humans-txt"))
+            result = self.client.get(path=reverse("humans-txt"))  # type: WSGIRequest
 
         self.assertQuerysetEqual(
-            qs=response.context.get("HUMANS_TXT_THANKS"), values=Thank.objects.none()
+            qs=result.context.get("HUMANS_TXT_THANKS"), values=Thank.objects.none()
         )
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     def test_humans_txt__render__without_components(self) -> None:
         """
@@ -392,13 +393,13 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # noqa: W605, E501, type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("humans-txt"))
+            result = self.client.get(path=reverse("humans-txt"))  # type: WSGIRequest
 
         self.assertQuerysetEqual(
-            qs=response.context.get("HUMANS_TXT_COMPONENTS"),
+            qs=result.context.get("HUMANS_TXT_COMPONENTS"),
             values=Component.objects.none(),
         )
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     def test_humans_txt__render__without_software(self) -> None:
         """
@@ -436,10 +437,10 @@ class HumansTxtViewTest(TestCase):
         Components: Django
         """  # noqa: W605, E501, type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("humans-txt"))
+            result = self.client.get(path=reverse("humans-txt"))  # type: WSGIRequest
 
         self.assertQuerysetEqual(
-            qs=response.context.get("HUMANS_TXT_SOFTWARE"),
+            qs=result.context.get("HUMANS_TXT_SOFTWARE"),
             values=Software.objects.none(),
         )
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
