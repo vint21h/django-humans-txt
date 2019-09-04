@@ -9,12 +9,18 @@ omit =
     */__init__.py
    humans_txt/apps.py
    humans_txt/migrations/*.py
+   humans_txt/conf.py
+   humans_txt/urls.py
+   humans_txt/admin/*.py
 
 [report]
 omit =
     */__init__.py
     humans_txt/apps.py
     humans_txt/migrations/*.py
+    humans_txt/conf.py
+    humans_txt/urls.py
+    humans_txt/admin/*.py
 exclude_lines =
     pragma: no cover
 

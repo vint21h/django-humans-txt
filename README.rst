@@ -1,6 +1,7 @@
 .. django-humans-txt
 .. README.rst
 
+
 A django-humans-txt documentation
 =================================
 
