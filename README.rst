@@ -7,7 +7,7 @@ A django-humans-txt documentation
 
 |Travis|_ |Coverage|_ |Codacy|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
 
-    *django-humans-txt is a django reusable application to handle humans.txt (http://humanstxt.org/)*
+    *django-humans-txt is a Django reusable application to handle humans.txt (http://humanstxt.org/)*
 
 .. contents::
 
