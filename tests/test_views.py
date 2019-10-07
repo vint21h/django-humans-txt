@@ -250,9 +250,9 @@ class HumansTxtViewTest(TestCase):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
         self.assertListEqual(
-            list1=result.context.get("HUMANS_TXT_LANGUAGES")
+            list1=result.context.get("HUMANS_TXT_LANGUAGES", [])  # type: ignore
             if result.context
-            else None,
+            else [],
             list2=[],
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
@@ -291,7 +291,11 @@ class HumansTxtViewTest(TestCase):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
         self.assertQuerysetEqual(
-            qs=result.context.get("HUMANS_TXT_TEAM") if result.context else None,
+            qs=result.context.get(  # type: ignore
+                "HUMANS_TXT_TEAM", Person.objects.none()
+            )
+            if result.context
+            else Person.objects.none(),
             values=Person.objects.none(),
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
@@ -335,7 +339,11 @@ class HumansTxtViewTest(TestCase):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
         self.assertQuerysetEqual(
-            qs=result.context.get("HUMANS_TXT_STANDARDS") if result.context else None,
+            qs=result.context.get(  # type: ignore
+                "HUMANS_TXT_STANDARDS", Standard.objects.none()
+            )
+            if result.context
+            else Standard.objects.none(),
             values=Standard.objects.none(),
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
@@ -377,7 +385,11 @@ class HumansTxtViewTest(TestCase):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
         self.assertQuerysetEqual(
-            qs=result.context.get("HUMANS_TXT_THANKS") if result.context else None,
+            qs=result.context.get(  # type: ignore
+                "HUMANS_TXT_THANKS", Thank.objects.none()
+            )
+            if result.context
+            else Thank.objects.none(),
             values=Thank.objects.none(),
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
@@ -421,7 +433,11 @@ class HumansTxtViewTest(TestCase):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
         self.assertQuerysetEqual(
-            qs=result.context.get("HUMANS_TXT_COMPONENTS") if result.context else None,
+            qs=result.context.get(  # type: ignore
+                "HUMANS_TXT_COMPONENTS", Component.objects.none()
+            )
+            if result.context
+            else Component.objects.none(),
             values=Component.objects.none(),
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
@@ -465,7 +481,11 @@ class HumansTxtViewTest(TestCase):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
         self.assertQuerysetEqual(
-            qs=result.context.get("HUMANS_TXT_SOFTWARE") if result.context else None,
+            qs=result.context.get(  # type: ignore
+                "HUMANS_TXT_SOFTWARE", Software.objects.none()
+            )
+            if result.context
+            else Software.objects.none(),
             values=Software.objects.none(),
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)

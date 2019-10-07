@@ -4,7 +4,7 @@
 # tests/models/test_standard.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List, Optional  # pylint: disable=W0611
 
 from django.test import TestCase
 
@@ -32,16 +32,16 @@ class StandardModelTest(TestCase):
         __unicode__ method must return standard name.
         """
 
-        standard = Standard.objects.first()  # type: Standard
+        standard = Standard.objects.first()  # type: Optional[Standard]
 
-        self.assertEqual(first=standard.__unicode__(), second="PEP 8")
+        self.assertEqual(first=standard.__unicode__(), second="PEP 8")  # type: ignore
 
     def test___repr__(self):
         """
         __repr__ method must return standard name.
         """
 
-        standard = Standard.objects.first()  # type: Standard
+        standard = Standard.objects.first()  # type: Optional[Standard]
 
         self.assertEqual(first=standard.__repr__(), second="PEP 8")
 
@@ -50,6 +50,6 @@ class StandardModelTest(TestCase):
         __str__ method must return standard name.
         """
 
-        standard = Standard.objects.first()  # type: Standard
+        standard = Standard.objects.first()  # type: Optional[Standard]
 
         self.assertEqual(first=standard.__str__(), second="PEP 8")

@@ -4,7 +4,7 @@
 # tests/models/test_thank.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List, Optional  # pylint: disable=W0611
 
 from django.test import TestCase
 
@@ -34,16 +34,18 @@ class ThankModelTest(TestCase):
         __unicode__ method must return thank name.
         """
 
-        thank = Thank.objects.first()  # type: Thank
+        thank = Thank.objects.first()  # type: Optional[Thank]
 
-        self.assertEqual(first=thank.__unicode__(), second="Alexei Andrushievich")
+        self.assertEqual(
+            first=thank.__unicode__(), second="Alexei Andrushievich"  # type: ignore
+        )
 
     def test___repr__(self):
         """
         __repr__ method must return thank name.
         """
 
-        thank = Thank.objects.first()  # type: Thank
+        thank = Thank.objects.first()  # type: Optional[Thank]
 
         self.assertEqual(first=thank.__repr__(), second="Alexei Andrushievich")
 
@@ -52,6 +54,6 @@ class ThankModelTest(TestCase):
         __str__ method must return thank name.
         """
 
-        thank = Thank.objects.first()  # type: Thank
+        thank = Thank.objects.first()  # type: Optional[Thank]
 
         self.assertEqual(first=thank.__str__(), second="Alexei Andrushievich")

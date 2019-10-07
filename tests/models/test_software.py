@@ -4,7 +4,7 @@
 # tests/models/test_software.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List, Optional  # pylint: disable=W0611
 
 from django.test import TestCase
 
@@ -32,16 +32,16 @@ class SoftwareModelTest(TestCase):
         __unicode__ method must return software name.
         """
 
-        software = Software.objects.first()  # type: Software
+        software = Software.objects.first()  # type: Optional[Software]
 
-        self.assertEqual(first=software.__unicode__(), second="tox")
+        self.assertEqual(first=software.__unicode__(), second="tox")  # type: ignore
 
     def test___repr__(self):
         """
         __repr__ method must return software name.
         """
 
-        software = Software.objects.first()  # type: Software
+        software = Software.objects.first()  # type: Optional[Software]
 
         self.assertEqual(first=software.__repr__(), second="tox")
 
@@ -50,6 +50,6 @@ class SoftwareModelTest(TestCase):
         __str__ method must return software name.
         """
 
-        software = Software.objects.first()  # type: Software
+        software = Software.objects.first()  # type: Optional[Software]
 
         self.assertEqual(first=software.__str__(), second="tox")

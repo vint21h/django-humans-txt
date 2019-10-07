@@ -4,7 +4,7 @@
 # tests/models/test_person.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List, Optional  # pylint: disable=W0611
 
 from django.test import TestCase
 
@@ -38,10 +38,11 @@ class PersonModelTest(TestCase):
         __unicode__ method must return formatted person title and name.
         """
 
-        person = Person.objects.first()  # type: Person
+        person = Person.objects.first()  # type: Optional[Person]
 
         self.assertEqual(
-            first=person.__unicode__(), second="Backend developer: Alexei Andrushievich"
+            first=person.__unicode__(),  # type: ignore
+            second="Backend developer: Alexei Andrushievich",
         )
 
     def test___repr__(self):
@@ -49,7 +50,7 @@ class PersonModelTest(TestCase):
         __repr__ method must return formatted person title and name.
         """
 
-        person = Person.objects.first()  # type: Person
+        person = Person.objects.first()  # type: Optional[Person]
 
         self.assertEqual(
             first=person.__repr__(), second="Backend developer: Alexei Andrushievich"
@@ -60,7 +61,7 @@ class PersonModelTest(TestCase):
         __str__ method must return formatted person title and name.
         """
 
-        person = Person.objects.first()  # type: Person
+        person = Person.objects.first()  # type: Optional[Person]
 
         self.assertEqual(
             first=person.__str__(), second="Backend developer: Alexei Andrushievich"

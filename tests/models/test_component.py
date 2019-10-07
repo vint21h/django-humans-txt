@@ -4,7 +4,7 @@
 # tests/models/test_component.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List, Optional  # pylint: disable=W0611
 
 from django.test import TestCase
 
@@ -32,16 +32,16 @@ class ComponentModelTest(TestCase):
         __unicode__ method must return component name.
         """
 
-        component = Component.objects.first()  # type: Component
+        component = Component.objects.first()  # type: Optional[Component]
 
-        self.assertEqual(first=component.__unicode__(), second="Django")
+        self.assertEqual(first=component.__unicode__(), second="Django")  # type: ignore
 
     def test___repr__(self):
         """
         __repr__ method must return component name.
         """
 
-        component = Component.objects.first()  # type: Component
+        component = Component.objects.first()  # type: Optional[Component]
 
         self.assertEqual(first=component.__repr__(), second="Django")
 
@@ -50,6 +50,6 @@ class ComponentModelTest(TestCase):
         __str__ method must return component name.
         """
 
-        component = Component.objects.first()  # type: Component
+        component = Component.objects.first()  # type: Optional[Component]
 
         self.assertEqual(first=component.__str__(), second="Django")
