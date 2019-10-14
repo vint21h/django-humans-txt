@@ -4,9 +4,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: django-humans-txt 0.5.1\n"
+"Project-Id-Version: django-humans-txt 0.6.0\n"
 "Report-Msgid-Bugs-To: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
-"POT-Creation-Date: 2019-10-08 13:45+0300\n"
+"POT-Creation-Date: 2019-10-14 11:58+0300\n"
 "PO-Revision-Date: 2018-09-29 16:48+000\n"
 "Last-Translator: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
 "Language-Team: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
@@ -16,82 +16,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 
-#: apps.py:22
+#: humans_txt/apps.py:22
 msgid "Django humans.txt"
 msgstr "Django humans.txt"
 
-#: models/component.py:22
+#: humans_txt/models/component.py:22
 msgid "component name"
 msgstr "component name"
 
-#: models/component.py:28
+#: humans_txt/models/component.py:28
 msgid "component"
 msgstr "component"
 
-#: models/component.py:29
+#: humans_txt/models/component.py:29
 msgid "components"
 msgstr "components"
 
-#: models/person.py:22
+#: humans_txt/models/person.py:22
 msgid "person name"
 msgstr "person name"
 
-#: models/person.py:25
+#: humans_txt/models/person.py:25
 msgid "person title"
 msgstr "person title"
 
-#: models/person.py:28
+#: humans_txt/models/person.py:28
 msgid "person site, email, link to a contact form, etc."
 msgstr "person site, email, link to a contact form, etc."
 
-#: models/person.py:35
+#: humans_txt/models/person.py:35
 msgid "person twitter URL"
 msgstr "person twitter URL"
 
-#: models/person.py:42
+#: humans_txt/models/person.py:42
 msgid "person city, country"
 msgstr "person city, country"
 
-#: models/person.py:52
+#: humans_txt/models/person.py:52
 msgid "person"
 msgstr "person"
 
-#: models/person.py:53
+#: humans_txt/models/person.py:53
 msgid "persons"
 msgstr "persons"
 
-#: models/software.py:22
+#: humans_txt/models/software.py:22
 msgid "software name"
 msgstr "software name"
 
-#: models/software.py:28 models/software.py:29
+#: humans_txt/models/software.py:28 humans_txt/models/software.py:29
 msgid "software"
 msgstr "software"
 
-#: models/standard.py:22
+#: humans_txt/models/standard.py:22
 msgid "standard name"
 msgstr "standard name"
 
-#: models/standard.py:28
+#: humans_txt/models/standard.py:28
 msgid "standard"
 msgstr "standard"
 
-#: models/standard.py:29
+#: humans_txt/models/standard.py:29
 msgid "standards"
 msgstr "standards"
 
-#: models/thank.py:22
+#: humans_txt/models/thank.py:22
 msgid "thank to person or organization name"
 msgstr "thank to person or organization name"
 
-#: models/thank.py:27
+#: humans_txt/models/thank.py:27
 msgid "thank to person or organization site URL"
 msgstr "thank to person or organization site URL"
 
-#: models/thank.py:37
+#: humans_txt/models/thank.py:37
 msgid "thank"
 msgstr "thank"
 
-#: models/thank.py:38
+#: humans_txt/models/thank.py:38
 msgid "thanks"
 msgstr "thanks"
