@@ -8,7 +8,7 @@ from typing import Dict, List, Union  # noqa: F401, pylint: disable=W0611
 
 from django.http import HttpResponse
 from django.http.request import HttpRequest
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 
 from humans_txt.conf import settings
 from humans_txt.models.component import Component
@@ -42,8 +42,9 @@ def humans_txt(request: HttpRequest) -> HttpResponse:
         "HUMANS_TXT_SOFTWARE": Software.objects.all(),
     }  # noqa: E501 type: Dict[str, Union[str, List[str], Person, Thank, Standard, Component, Software]]
 
-    return render_to_response(
-        "humans_txt/humans_txt.txt",
+    return render(
+        request=request,
+        template_name="humans_txt/humans_txt.txt",
         context=context,
         content_type="text/plain; charset=utf-8",
     )
