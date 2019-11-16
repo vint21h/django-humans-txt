@@ -5,7 +5,7 @@
 A django-humans-txt documentation
 =================================
 
-|Travis|_ |Coverage|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
+|Travis|_ |Coveralls|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
 
     *django-humans-txt is a Django reusable application to handle humans.txt (http://humanstxt.org/)*
 
@@ -80,8 +80,8 @@ For other authors list see AUTHORS file.
 
 .. |Travis| image:: https://travis-ci.org/vint21h/django-humans-txt.svg?branch=master
     :alt: Travis
-.. |Coverage| image:: https://api.codacy.com/project/badge/Coverage/6c967da4cf21436dacc49ca6961ea1b0
-    :alt: Coverage
+.. |Coveralls| image:: https://coveralls.io/repos/github/vint21h/django-humans-txt/badge.svg?branch=master
+    :alt: Coveralls
 .. |Requires| image:: https://requires.io/github/vint21h/django-humans-txt/requirements.svg?branch=master
     :alt: Requires
 .. |pypi-license| image:: https://img.shields.io/pypi/l/django-humans-txt
@@ -99,7 +99,7 @@ For other authors list see AUTHORS file.
 .. |pypi-status| image:: https://img.shields.io/pypi/status/django-humans-txt
     :alt: Package status
 .. _Travis: https://travis-ci.org/vint21h/django-humans-txt/
-.. _Coverage: https://www.codacy.com/app/vint21h/django-humans-txt
+.. _Coveralls: https://coveralls.io/github/vint21h/django-humans-txt?branch=master
 .. _Requires: https://requires.io/github/vint21h/django-humans-txt/requirements/?branch=master
 .. _pypi-license: https://pypi.org/project/django-humans-txt/
 .. _pypi-version: https://pypi.org/project/django-humans-txt/
