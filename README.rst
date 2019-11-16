@@ -24,9 +24,9 @@ Configuration
 
     # settings.py
 
-    INSTALLED_APPS += (
+    INSTALLED_APPS += [
         "humans_txt",
-    )
+    ]
 
 * Add ``"humans_txt"`` to your URLs definitions:
 
@@ -40,8 +40,8 @@ Configuration
 
 * Run ``python manage.py migrate`` in your project folder to apply app migrations.
 
-django-humans-txt settings
---------------------------
+Settings
+--------
 ``HUMANS_TXT_BANNER``
     Contains a banner that placed at the start of humans.txt response. Defaults to ``""``.
 ``HUMANS_TXT_LAST_UPDATE``
@@ -79,16 +79,27 @@ Contacts
 For other authors list see AUTHORS file.
 
 .. |Travis| image:: https://travis-ci.org/vint21h/django-humans-txt.svg?branch=master
+    :alt: Travis
 .. |Coverage| image:: https://api.codacy.com/project/badge/Coverage/6c967da4cf21436dacc49ca6961ea1b0
+    :alt: Coverage
 .. |Codacy| image:: https://api.codacy.com/project/badge/Grade/6c967da4cf21436dacc49ca6961ea1b0
+    :alt: Codacy
 .. |Requires| image:: https://requires.io/github/vint21h/django-humans-txt/requirements.svg?branch=master
+    :alt: Requires
 .. |pypi-license| image:: https://img.shields.io/pypi/l/django-humans-txt
+    :alt: License
 .. |pypi-version| image:: https://img.shields.io/pypi/v/django-humans-txt
+    :alt: Version
 .. |pypi-django-version| image:: https://img.shields.io/pypi/djversions/django-humans-txt
+    :alt: Supported Django version
 .. |pypi-python-version| image:: https://img.shields.io/pypi/pyversions/django-humans-txt
+    :alt: Supported Python version
 .. |pypi-format| image:: https://img.shields.io/pypi/format/django-humans-txt
+    :alt: Package format
 .. |pypi-wheel| image:: https://img.shields.io/pypi/wheel/django-humans-txt
+    :alt: Python wheel support
 .. |pypi-status| image:: https://img.shields.io/pypi/status/django-humans-txt
+    :alt: Package status
 .. _Travis: https://travis-ci.org/vint21h/django-humans-txt/
 .. _Coverage: https://www.codacy.com/app/vint21h/django-humans-txt
 .. _Codacy: https://www.codacy.com/app/vint21h/django-humans-txt
