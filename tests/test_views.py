@@ -108,7 +108,7 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # noqa: W605, E501, type: str
+        """  # type: str  # noqa: W605, E501
         with translation.override("en"):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
@@ -160,7 +160,7 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # noqa: W605, type: str
+        """  # type: str  # noqa: W605
         with translation.override("en"):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
@@ -203,7 +203,7 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # noqa: W605, E501, type: str
+        """  # type: str  # noqa: W605, E501
         with translation.override("en"):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
@@ -245,7 +245,7 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # noqa: W605, E501, type: str
+        """  # type: str  # noqa: W605, E501
         with translation.override("en"):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
@@ -286,7 +286,7 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # noqa: W605, E501, type: str
+        """  # type: str  # noqa: W605, E501
         with translation.override("en"):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
@@ -334,7 +334,7 @@ class HumansTxtViewTest(TestCase):
         Language: en / uk
         Components: Django
         Software: tox
-        """  # noqa: W605, E501, type: str
+        """  # type: str  # noqa: W605, E501
         with translation.override("en"):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
@@ -380,7 +380,7 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # noqa: W605, E501, type: str
+        """  # type: str  # noqa: W605, E501
         with translation.override("en"):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
@@ -428,7 +428,7 @@ class HumansTxtViewTest(TestCase):
         Language: en / uk
         Standards: PEP 8
         Software: tox
-        """  # noqa: W605, E501, type: str
+        """  # type: str  # noqa: W605, E501
         with translation.override("en"):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 
@@ -476,7 +476,7 @@ class HumansTxtViewTest(TestCase):
         Language: en / uk
         Standards: PEP 8
         Components: Django
-        """  # noqa: W605, E501, type: str
+        """  # type: str  # noqa: W605, E501
         with translation.override("en"):
             result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
 

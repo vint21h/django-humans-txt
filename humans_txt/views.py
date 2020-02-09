@@ -4,8 +4,10 @@
 # humans_txt/views.py
 
 
-from typing import Dict, List, Union  # noqa: F401, pylint: disable=W0611
+from datetime import date
+from typing import Dict, List, Union  # noqa: F401  # pylint: disable=W0611
 
+from django.db.models import Manager
 from django.http import HttpResponse
 from django.http.request import HttpRequest
 from django.shortcuts import render
@@ -40,7 +42,7 @@ def humans_txt(request: HttpRequest) -> HttpResponse:
         "HUMANS_TXT_STANDARDS": Standard.objects.all(),
         "HUMANS_TXT_COMPONENTS": Component.objects.all(),
         "HUMANS_TXT_SOFTWARE": Software.objects.all(),
-    }  # noqa: E501 type: Dict[str, Union[str, List[str], Person, Thank, Standard, Component, Software]]
+    }  # type: Dict[str, Union[str, date, List[str], Manager[Person], Manager[Thank], Manager[Standard], Manager[Component], Manager[Software]]]  # noqa: E501
 
     return render(
         request=request,
