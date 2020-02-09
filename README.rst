@@ -38,7 +38,7 @@ Configuration
         url(r"^humans\.txt", include("humans_txt.urls")),
     ]
 
-* Run ``$ python manage.py migrate`` in your project folder to apply app migrations.
+* Run ``$ python ./manage.py migrate`` in your project folder to apply app migrations.
 
 Settings
 --------
