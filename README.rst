@@ -34,6 +34,9 @@ Configuration
 
     # urls.py
 
+    from django.conf.urls import url
+
+
     urlpatterns += [
         url(r"^humans\.txt", include("humans_txt.urls")),
     ]
