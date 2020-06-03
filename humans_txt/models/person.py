@@ -54,12 +54,31 @@ class Person(models.Model):
         ordering = ["name"]  # type: List[str]
 
     def __unicode__(self) -> str:
+        """
+        Model representation.
+
+        :return: formatted string with person title and name
+        :rtype: str
+        """
+
         return f"{self.title}: {self.name}"
 
     def __str__(self) -> str:
+        """
+        Model representation.
+
+        :return: formatted string with person title and name
+        :rtype: str
+        """
 
         return self.__unicode__()
 
     def __repr__(self) -> str:
+        """
+        Model representation.
+
+        :return: formatted string with person title and name
+        :rtype: str
+        """
 
         return self.__unicode__()

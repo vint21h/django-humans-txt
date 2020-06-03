@@ -39,13 +39,31 @@ class Thank(models.Model):
         ordering = ["name"]  # type: List[str]
 
     def __unicode__(self) -> str:
+        """
+        Model representation.
+
+        :return: thank to  name
+        :rtype: str
+        """
 
         return self.name
 
     def __str__(self) -> str:
+        """
+        Model representation.
+
+        :return: thank to  name
+        :rtype: str
+        """
 
         return self.__unicode__()
 
     def __repr__(self) -> str:
+        """
+        Model representation.
+
+        :return: thank to  name
+        :rtype: str
+        """
 
         return self.__unicode__()

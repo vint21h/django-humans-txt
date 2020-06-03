@@ -30,13 +30,30 @@ class Software(models.Model):
         ordering = ["name"]  # type: List[str]
 
     def __unicode__(self) -> str:
+        """
+        Model representation.
+
+        :return: software name
+        :rtype: str
+        """
 
         return self.name
 
     def __str__(self) -> str:
+        """
+        Model representation.
 
+        :return: software name
+        :rtype: str
+        """
         return self.__unicode__()
 
     def __repr__(self) -> str:
+        """
+        Model representation.
+
+        :return: software name
+        :rtype: str
+        """
 
         return self.__unicode__()
