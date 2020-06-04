@@ -23,6 +23,9 @@ class Software(models.Model):
     )
 
     class Meta:
+        """
+        Model settings.
+        """
 
         app_label = "humans_txt"  # type: str
         verbose_name = _("software")  # type: str

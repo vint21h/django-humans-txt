@@ -32,6 +32,9 @@ class Thank(models.Model):
     )
 
     class Meta:
+        """
+        Model settings.
+        """
 
         app_label = "humans_txt"  # type: str
         verbose_name = _("thank")  # type: str
@@ -42,7 +45,7 @@ class Thank(models.Model):
         """
         Model representation.
 
-        :return: thank to  name
+        :return: thank to name
         :rtype: str
         """
 
@@ -52,7 +55,7 @@ class Thank(models.Model):
         """
         Model representation.
 
-        :return: thank to  name
+        :return: thank to name
         :rtype: str
         """
 
@@ -62,7 +65,7 @@ class Thank(models.Model):
         """
         Model representation.
 
-        :return: thank to  name
+        :return: thank to name
         :rtype: str
         """
 

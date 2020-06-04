@@ -47,6 +47,9 @@ class Person(models.Model):
     )
 
     class Meta:
+        """
+        Model settings.
+        """
 
         app_label = "humans_txt"  # type: str
         verbose_name = _("person")  # type: str
