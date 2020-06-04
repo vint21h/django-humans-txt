@@ -4,9 +4,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: django-humans-txt 0.12.1\n"
+"Project-Id-Version: django-humans-txt 0.12.2\n"
 "Report-Msgid-Bugs-To: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
-"POT-Creation-Date: 2020-06-03 05:55+0300\n"
+"POT-Creation-Date: 2020-06-04 07:42+0300\n"
 "PO-Revision-Date: 2018-09-29 16:48+000\n"
 "Last-Translator: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
 "Language-Team: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
@@ -24,11 +24,11 @@ msgstr "Django humans.txt"
 msgid "component name"
 msgstr "component name"
 
-#: humans_txt/models/component.py:28
+#: humans_txt/models/component.py:31
 msgid "component"
 msgstr "component"
 
-#: humans_txt/models/component.py:29
+#: humans_txt/models/component.py:32
 msgid "components"
 msgstr "components"
 
@@ -52,11 +52,11 @@ msgstr "person twitter URL"
 msgid "person city, country"
 msgstr "person city, country"
 
-#: humans_txt/models/person.py:52
+#: humans_txt/models/person.py:55
 msgid "person"
 msgstr "person"
 
-#: humans_txt/models/person.py:53
+#: humans_txt/models/person.py:56
 msgid "persons"
 msgstr "persons"
 
@@ -64,7 +64,7 @@ msgstr "persons"
 msgid "software name"
 msgstr "software name"
 
-#: humans_txt/models/software.py:28 humans_txt/models/software.py:29
+#: humans_txt/models/software.py:31 humans_txt/models/software.py:32
 msgid "software"
 msgstr "software"
 
@@ -72,11 +72,11 @@ msgstr "software"
 msgid "standard name"
 msgstr "standard name"
 
-#: humans_txt/models/standard.py:28
+#: humans_txt/models/standard.py:31
 msgid "standard"
 msgstr "standard"
 
-#: humans_txt/models/standard.py:29
+#: humans_txt/models/standard.py:32
 msgid "standards"
 msgstr "standards"
 
@@ -88,10 +88,10 @@ msgstr "thank to person or organization name"
 msgid "thank to person or organization site URL"
 msgstr "thank to person or organization site URL"
 
-#: humans_txt/models/thank.py:37
+#: humans_txt/models/thank.py:40
 msgid "thank"
 msgstr "thank"
 
-#: humans_txt/models/thank.py:38
+#: humans_txt/models/thank.py:41
 msgid "thanks"
 msgstr "thanks"
