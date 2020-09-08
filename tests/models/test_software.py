@@ -20,14 +20,14 @@ class SoftwareModelTest(TestCase):
     """
 
     @classmethod
-    def setUpTestData(cls):
+    def setUpTestData(cls) -> None:
         """
         Set up non-modified objects used by all test methods.
         """
 
         Software.objects.create(name="tox")
 
-    def test___unicode__(self):
+    def test___unicode__(self) -> None:
         """
         __unicode__ method must return software name.
         """
@@ -36,7 +36,7 @@ class SoftwareModelTest(TestCase):
 
         self.assertEqual(first=software.__unicode__(), second="tox")  # type: ignore
 
-    def test___repr__(self):
+    def test___repr__(self) -> None:
         """
         __repr__ method must return software name.
         """
@@ -45,7 +45,7 @@ class SoftwareModelTest(TestCase):
 
         self.assertEqual(first=software.__repr__(), second="tox")
 
-    def test___str__(self):
+    def test___str__(self) -> None:
         """
         __str__ method must return software name.
         """

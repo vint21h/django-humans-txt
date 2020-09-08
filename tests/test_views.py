@@ -29,7 +29,7 @@ class HumansTxtViewTest(TestCase):
     """
 
     @classmethod
-    def setUpTestData(cls):
+    def setUpTestData(cls) -> None:
         """
         Set up non-modified objects used by all test methods.
         """
@@ -51,9 +51,6 @@ class HumansTxtViewTest(TestCase):
     def test_humans_txt__return_response(self) -> None:
         """
         Test view returning response.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         request = HttpRequest()  # type: HttpRequest
@@ -63,9 +60,6 @@ class HumansTxtViewTest(TestCase):
     def test_humans_txt__render__template_used(self) -> None:
         """
         Test view right template usage .
-
-        :return: nothing.
-        :rtype: None.
         """
 
         with translation.override("en"):
@@ -78,9 +72,6 @@ class HumansTxtViewTest(TestCase):
     def test_humans_txt__render(self) -> None:
         """
         Test view rendering result.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         expected = """
@@ -139,9 +130,6 @@ class HumansTxtViewTest(TestCase):
     def test_humans_txt__render__without_banner(self) -> None:
         """
         Test view rendering result without banner.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         expected = """
@@ -174,9 +162,6 @@ class HumansTxtViewTest(TestCase):
     def test_humans_txt__render__without_last_update(self) -> None:
         """
         Test view rendering result without last update.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         expected = """
@@ -216,9 +201,6 @@ class HumansTxtViewTest(TestCase):
     def test_humans_txt__render__without_languages(self) -> None:
         """
         Test view rendering result without languages.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         expected = """
@@ -260,9 +242,6 @@ class HumansTxtViewTest(TestCase):
     def test_humans_txt__render__without_team(self) -> None:
         """
         Test view rendering result without team.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         Person.objects.all().delete()
@@ -303,9 +282,6 @@ class HumansTxtViewTest(TestCase):
     def test_humans_txt__render__without_standards(self) -> None:
         """
         Test view rendering result without standards.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         Standard.objects.all().delete()
@@ -351,9 +327,6 @@ class HumansTxtViewTest(TestCase):
     def test_humans_txt__render__without_thanks(self) -> None:
         """
         Test view rendering result without thanks.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         Thank.objects.all().delete()
@@ -397,9 +370,6 @@ class HumansTxtViewTest(TestCase):
     def test_humans_txt__render__without_components(self) -> None:
         """
         Test view rendering result without components.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         Component.objects.all().delete()
@@ -445,9 +415,6 @@ class HumansTxtViewTest(TestCase):
     def test_humans_txt__render__without_software(self) -> None:
         """
         Test view rendering result without software.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         Software.objects.all().delete()

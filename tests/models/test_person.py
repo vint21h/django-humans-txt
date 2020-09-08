@@ -33,7 +33,7 @@ class PersonModelTest(TestCase):
             location="Ukraine",
         )
 
-    def test___unicode__(self):
+    def test___unicode__(self) -> None:
         """
         __unicode__ method must return formatted person title and name.
         """
@@ -45,7 +45,7 @@ class PersonModelTest(TestCase):
             second="Backend developer: Alexei Andrushievich",
         )
 
-    def test___repr__(self):
+    def test___repr__(self) -> None:
         """
         __repr__ method must return formatted person title and name.
         """
@@ -56,7 +56,7 @@ class PersonModelTest(TestCase):
             first=person.__repr__(), second="Backend developer: Alexei Andrushievich"
         )
 
-    def test___str__(self):
+    def test___str__(self) -> None:
         """
         __str__ method must return formatted person title and name.
         """

@@ -27,10 +27,10 @@ def humans_txt(request: HttpRequest) -> HttpResponse:
     """
     Return humans.txt.
 
-    :param request: django request instance.
-    :type request: django.http.request.HttpRequest.
+    :param request: django request instance
+    :type request: HttpRequest
     :return: rendered humans.txt
-    :rtype: django.http.HttpResponse.
+    :rtype: HttpResponse
     """
 
     context = {

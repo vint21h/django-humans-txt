@@ -20,14 +20,14 @@ class ComponentModelTest(TestCase):
     """
 
     @classmethod
-    def setUpTestData(cls):
+    def setUpTestData(cls) -> None:
         """
         Set up non-modified objects used by all test methods.
         """
 
         Component.objects.create(name="Django")
 
-    def test___unicode__(self):
+    def test___unicode__(self) -> None:
         """
         __unicode__ method must return component name.
         """
@@ -36,7 +36,7 @@ class ComponentModelTest(TestCase):
 
         self.assertEqual(first=component.__unicode__(), second="Django")  # type: ignore
 
-    def test___repr__(self):
+    def test___repr__(self) -> None:
         """
         __repr__ method must return component name.
         """
@@ -45,7 +45,7 @@ class ComponentModelTest(TestCase):
 
         self.assertEqual(first=component.__repr__(), second="Django")
 
-    def test___str__(self):
+    def test___str__(self) -> None:
         """
         __str__ method must return component name.
         """

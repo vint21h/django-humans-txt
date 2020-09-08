@@ -20,7 +20,7 @@ class ThankModelTest(TestCase):
     """
 
     @classmethod
-    def setUpTestData(cls):
+    def setUpTestData(cls) -> None:
         """
         Set up non-modified objects used by all test methods.
         """
@@ -29,7 +29,7 @@ class ThankModelTest(TestCase):
             name="Alexei Andrushievich", url="https://github.com/vint21h/"
         )
 
-    def test___unicode__(self):
+    def test___unicode__(self) -> None:
         """
         __unicode__ method must return thank name.
         """
@@ -40,7 +40,7 @@ class ThankModelTest(TestCase):
             first=thank.__unicode__(), second="Alexei Andrushievich"  # type: ignore
         )
 
-    def test___repr__(self):
+    def test___repr__(self) -> None:
         """
         __repr__ method must return thank name.
         """
@@ -49,7 +49,7 @@ class ThankModelTest(TestCase):
 
         self.assertEqual(first=thank.__repr__(), second="Alexei Andrushievich")
 
-    def test___str__(self):
+    def test___str__(self) -> None:
         """
         __str__ method must return thank name.
         """
