@@ -7,17 +7,17 @@
 from datetime import date
 from typing import Dict, List, Union  # noqa: F401  # pylint: disable=W0611
 
+from django.shortcuts import render
 from django.db.models import Manager
 from django.http import HttpResponse
 from django.http.request import HttpRequest
-from django.shortcuts import render
 
 from humans_txt.conf import settings
-from humans_txt.models.component import Component
+from humans_txt.models.thank import Thank
 from humans_txt.models.person import Person
 from humans_txt.models.software import Software
 from humans_txt.models.standard import Standard
-from humans_txt.models.thank import Thank
+from humans_txt.models.component import Component
 
 
 __all__ = ["humans_txt"]  # type: List[str]

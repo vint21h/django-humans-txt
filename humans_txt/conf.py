@@ -4,8 +4,8 @@
 # humans_txt/conf.py
 
 
-from datetime import date  # noqa: F401  # pylint: disable=W0611
 from typing import List  # pylint: disable=W0611
+from datetime import date  # noqa: F401  # pylint: disable=W0611
 
 from appconf import AppConf
 from django.conf import settings
