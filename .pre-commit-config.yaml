@@ -53,7 +53,7 @@ repos:
       name: bandit
       stages: [commit]
       language: system
-      entry: pipenv run bandit -r humans_txt tests --ini=.bandit
+      entry: pipenv run bandit -r humans_txt tests --ini=setup.cfg
       types: [python]
       pass_filenames: false
     - id: dodgy
