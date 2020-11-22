@@ -12,7 +12,7 @@ from django.contrib import admin
 __all__ = ["StandardAdmin"]  # type: List[str]
 
 
-class StandardAdmin(admin.ModelAdmin):
+class StandardAdmin(admin.ModelAdmin):  # type: ignore
     """
     Customize Standard model for admin area.
     """

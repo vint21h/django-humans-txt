@@ -9,6 +9,7 @@
 from typing import List, Tuple  # pylint: disable=W0611
 
 from django.db import models, migrations
+from django.db.migrations.operations.base import Operation
 
 
 class Migration(migrations.Migration):
@@ -79,4 +80,4 @@ class Migration(migrations.Migration):
                 "ordering": ["name"],
             },
         )
-    ]  # type: List[migrations.CreateModel]
+    ]  # type: List[Operation]
