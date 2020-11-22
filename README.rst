@@ -80,7 +80,7 @@ Contacts
 
 For other authors list see AUTHORS file.
 
-.. |Travis| image:: https://travis-ci.org/vint21h/django-humans-txt.svg?branch=master
+.. |Travis| image:: https://travis-ci.com/vint21h/django-humans-txt.svg?branch=master
     :alt: Travis
 .. |Coveralls| image:: https://coveralls.io/repos/github/vint21h/django-humans-txt/badge.svg?branch=master
     :alt: Coveralls
@@ -100,7 +100,7 @@ For other authors list see AUTHORS file.
     :alt: Python wheel support
 .. |pypi-status| image:: https://img.shields.io/pypi/status/django-humans-txt
     :alt: Package status
-.. _Travis: https://travis-ci.org/vint21h/django-humans-txt/
+.. _Travis: https://travis-ci.com/vint21h/django-humans-txt/
 .. _Coveralls: https://coveralls.io/github/vint21h/django-humans-txt?branch=master
 .. _Requires: https://requires.io/github/vint21h/django-humans-txt/requirements/?branch=master
 .. _pypi-license: https://pypi.org/project/django-humans-txt/
