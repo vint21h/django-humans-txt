@@ -6,9 +6,9 @@
 
 from typing import List  # pylint: disable=W0611
 
-from django.urls import reverse
 from django.test import TestCase
 from django.utils import translation
+from django.shortcuts import resolve_url
 from django.test.utils import override_settings
 from django.http import HttpRequest, HttpResponse
 
@@ -63,7 +63,9 @@ class HumansTxtViewTest(TestCase):
         """
 
         with translation.override("en"):
-            result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="humans-txt")
+            )  # type: HttpResponse
 
         self.assertTemplateUsed(
             response=result, template_name="humans_txt/humans_txt.txt"
@@ -101,7 +103,9 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # type: str  # noqa: W605, E501
         with translation.override("en"):
-            result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="humans-txt")
+            )  # type: HttpResponse
 
         self.assertIsNotNone(
             obj=result.context.get("HUMANS_TXT_BANNER") if result.context else None
@@ -150,7 +154,9 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # type: str  # noqa: W605
         with translation.override("en"):
-            result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="humans-txt")
+            )  # type: HttpResponse
 
         self.assertEqual(
             first=result.context.get("HUMANS_TXT_BANNER") if result.context else None,
@@ -190,7 +196,9 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # type: str  # noqa: W605, E501
         with translation.override("en"):
-            result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="humans-txt")
+            )  # type: HttpResponse
 
         self.assertIsNone(
             obj=result.context.get("HUMANS_TXT_LAST_UPDATE") if result.context else None
@@ -229,7 +237,9 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # type: str  # noqa: W605, E501
         with translation.override("en"):
-            result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="humans-txt")
+            )  # type: HttpResponse
 
         self.assertListEqual(
             list1=result.context.get("HUMANS_TXT_LANGUAGES", [])  # type: ignore
@@ -267,7 +277,9 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # type: str  # noqa: W605, E501
         with translation.override("en"):
-            result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="humans-txt")
+            )  # type: HttpResponse
 
         self.assertQuerysetEqual(
             qs=result.context.get(  # type: ignore
@@ -312,7 +324,9 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # type: str  # noqa: W605, E501
         with translation.override("en"):
-            result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="humans-txt")
+            )  # type: HttpResponse
 
         self.assertQuerysetEqual(
             qs=result.context.get(  # type: ignore
@@ -355,7 +369,9 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # type: str  # noqa: W605, E501
         with translation.override("en"):
-            result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="humans-txt")
+            )  # type: HttpResponse
 
         self.assertQuerysetEqual(
             qs=result.context.get(  # type: ignore
@@ -400,7 +416,9 @@ class HumansTxtViewTest(TestCase):
         Software: tox
         """  # type: str  # noqa: W605, E501
         with translation.override("en"):
-            result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="humans-txt")
+            )  # type: HttpResponse
 
         self.assertQuerysetEqual(
             qs=result.context.get(  # type: ignore
@@ -445,7 +463,9 @@ class HumansTxtViewTest(TestCase):
         Components: Django
         """  # type: str  # noqa: W605, E501
         with translation.override("en"):
-            result = self.client.get(path=reverse("humans-txt"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="humans-txt")
+            )  # type: HttpResponse
 
         self.assertQuerysetEqual(
             qs=result.context.get(  # type: ignore

@@ -5,7 +5,7 @@
 A django-humans-txt documentation
 =================================
 
-|Travis|_ |Coveralls|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
+|GitHub|_ |Coveralls|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
 
     *django-humans-txt is a Django reusable application to handle humans.txt (http://humanstxt.org/)*
 
@@ -34,11 +34,11 @@ Configuration
 
     # urls.py
 
-    from django.conf.urls import url
+    from django.urls import re_path
 
 
     urlpatterns += [
-        url(r"^humans\.txt", include("humans_txt.urls")),
+        re_path(r"^humans\.txt", include("humans_txt.urls")),
     ]
 
 * Run ``$ python ./manage.py migrate`` in your project folder to apply app migrations.
@@ -80,8 +80,8 @@ Contacts
 
 For other authors list see AUTHORS file.
 
-.. |Travis| image:: https://travis-ci.com/vint21h/django-humans-txt.svg?branch=master
-    :alt: Travis
+.. |GitHub| image:: https://github.com/vint21h/django-humans-txt/workflows/build/badge.svg
+    :alt: GitHub
 .. |Coveralls| image:: https://coveralls.io/repos/github/vint21h/django-humans-txt/badge.svg?branch=master
     :alt: Coveralls
 .. |Requires| image:: https://requires.io/github/vint21h/django-humans-txt/requirements.svg?branch=master
@@ -100,7 +100,7 @@ For other authors list see AUTHORS file.
     :alt: Python wheel support
 .. |pypi-status| image:: https://img.shields.io/pypi/status/django-humans-txt
     :alt: Package status
-.. _Travis: https://travis-ci.com/vint21h/django-humans-txt/
+.. _GitHub: https://github.com/vint21h/django-humans-txt/actions/
 .. _Coveralls: https://coveralls.io/github/vint21h/django-humans-txt?branch=master
 .. _Requires: https://requires.io/github/vint21h/django-humans-txt/requirements/?branch=master
 .. _pypi-license: https://pypi.org/project/django-humans-txt/
