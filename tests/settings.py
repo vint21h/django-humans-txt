@@ -43,24 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
-    "django_nose",
     "humans_txt",
-]  # type: List[str]
-
-# add nose test runner
-TEST_RUNNER = "django_nose.NoseTestSuiteRunner"  # type: str
-
-# configure nose test runner
-NOSE_ARGS = [
-    "--rednose",
-    "--force-color",
-    "--with-timer",
-    "--with-doctest",
-    "--with-coverage",
-    "--cover-inclusive",
-    "--cover-erase",
-    "--cover-package=humans_txt",
-    "--logging-clear-handlers",
 ]  # type: List[str]
 
 # configure urls
