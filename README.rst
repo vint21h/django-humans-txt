@@ -68,7 +68,7 @@ Usage
 
 Contributing
 ------------
-1. `Fork it <https://github.com/vint21h/django-mcadmin/>`_
+1. `Fork it <https://github.com/vint21h/django-humans-txt/>`_
 2. Install `GNU Make <https://www.gnu.org/software/make/>`_
 3. Install and configure `pyenv <https://github.com/pyenv/pyenv/>`_ and `pyenv-virtualenv plugin <https://github.com/pyenv/pyenv-virtualenv/>`_
 4. Install and configure `direnv <https://github.com/direnv/direnv/>`_
@@ -108,7 +108,7 @@ Contributing
 
     git push origin my-new-fix-or-feature
 
-11. `Create a new Pull Request <https://github.com/vint21h/django-mcadmin/compare/>`_
+11. `Create a new Pull Request <https://github.com/vint21h/django-humans-txt/compare/>`_
 
 Licensing
 ---------
