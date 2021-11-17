@@ -4,18 +4,16 @@
 # humans_txt/admin/component.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List
 
 from django.contrib import admin
 
 
-__all__ = ["ComponentAdmin"]  # type: List[str]
+__all__: List[str] = ["ComponentAdmin"]
 
 
 class ComponentAdmin(admin.ModelAdmin):  # type: ignore
-    """
-    Customize Component model for admin area.
-    """
+    """Customize Component model for admin area."""
 
-    list_display = ["name"]  # type: List[str]
-    search_fields = ["name"]  # type: List[str]
+    list_display: List[str] = ["name"]
+    search_fields: List[str] = ["name"]

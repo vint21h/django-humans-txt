@@ -4,19 +4,17 @@
 # humans_txt/apps.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List
 
 from django.apps import AppConfig
 from django.utils.translation import gettext_lazy as _
 
 
-__all__ = ["DjangoHumansTxtConfig"]  # type: List[str]
+__all__: List[str] = ["DjangoHumansTxtConfig"]
 
 
 class DjangoHumansTxtConfig(AppConfig):
-    """
-    Django humans.txt config.
-    """
+    """Django humans.txt config."""
 
-    name = "humans_txt"  # type: str
-    verbose_name = _("Django humans.txt")  # type: str
+    name: str = "humans_txt"
+    verbose_name: str = _("Django humans.txt")

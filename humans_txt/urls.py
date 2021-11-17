@@ -4,18 +4,18 @@
 # humans_txt/urls.py
 
 
-from typing import List, Union  # pylint: disable=W0611
+from typing import List, Union
 
 from django.conf.urls import url
-from django.urls.resolvers import URLPattern, URLResolver  # pylint: disable=W0611
+from django.urls.resolvers import URLPattern, URLResolver
 
 from humans_txt.views import humans_txt
 
 
-__all__ = ["urlpatterns"]
+__all__: List[str] = ["urlpatterns"]
 
 
 # humans.txt urls
-urlpatterns = [
+urlpatterns: List[Union[URLPattern, URLResolver]] = [
     url(r"^$", humans_txt, name="humans-txt")
-]  # type: List[Union[URLPattern, URLResolver]]
+]

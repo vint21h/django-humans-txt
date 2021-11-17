@@ -4,13 +4,13 @@
 # tests/test_views.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List
 
 from django.test import TestCase
-from django.utils import translation
 from django.shortcuts import resolve_url
 from django.test.utils import override_settings
 from django.http import HttpRequest, HttpResponse
+from django.utils.translation import override as override_translation
 
 from humans_txt.views import humans_txt
 from humans_txt.models.thank import Thank
@@ -20,20 +20,15 @@ from humans_txt.models.standard import Standard
 from humans_txt.models.component import Component
 
 
-__all__ = ["HumansTxtViewTest"]  # type: List[str]
+__all__: List[str] = ["HumansTxtViewTest"]
 
 
 class HumansTxtViewTest(TestCase):
-    """
-    humans.txt view tests.
-    """
+    """humans.txt view tests."""
 
     @classmethod
     def setUpTestData(cls) -> None:
-        """
-        Set up non-modified objects used by all test methods.
-        """
-
+        """Set up non-modified objects used by all test methods."""
         Component.objects.create(name="Django")
         Person.objects.create(
             name="Alexei Andrushievich",
@@ -49,34 +44,26 @@ class HumansTxtViewTest(TestCase):
         )
 
     def test_humans_txt__return_response(self) -> None:
-        """
-        Test view returning response.
-        """
-
-        request = HttpRequest()  # type: HttpRequest
+        """Test view returning response."""
+        request: HttpRequest = HttpRequest()
 
         self.assertIsInstance(obj=humans_txt(request=request), cls=HttpResponse)
 
+    @override_translation(language="en")
     def test_humans_txt__render__template_used(self) -> None:
-        """
-        Test view right template usage .
-        """
-
-        with translation.override("en"):
-            result = self.client.get(
-                path=resolve_url(to="humans-txt")
-            )  # type: HttpResponse
+        """Test view right template usage ."""
+        result: HttpResponse = self.client.get(
+            path=resolve_url(to="humans-txt")
+        )
 
         self.assertTemplateUsed(
             response=result, template_name="humans_txt/humans_txt.txt"
         )
 
-    def test_humans_txt__render(self) -> None:
-        """
-        Test view rendering result.
-        """
-
-        expected = """
+    @override_translation(language="en")
+    def test_humans_txt__render(self) -> None:  # noqa: CCR001
+        """Test view rendering result."""
+        expected: str = """
              _ _                               _                                            _        _
             | (_)                             | |                                          | |      | |
           __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_
@@ -101,11 +88,10 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # type: str  # noqa: W605, E501
-        with translation.override("en"):
-            result = self.client.get(
-                path=resolve_url(to="humans-txt")
-            )  # type: HttpResponse
+        """  # noqa: W605, E501
+        result: HttpResponse = self.client.get(
+            path=resolve_url(to="humans-txt")
+        )
 
         self.assertIsNotNone(
             obj=result.context.get("HUMANS_TXT_BANNER") if result.context else None
@@ -131,12 +117,10 @@ class HumansTxtViewTest(TestCase):
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     @override_settings(HUMANS_TXT_BANNER="")
+    @override_translation(language="en")
     def test_humans_txt__render__without_banner(self) -> None:
-        """
-        Test view rendering result without banner.
-        """
-
-        expected = """
+        """Test view rendering result without banner."""
+        expected: str = """
         /* TEAM */
         Backend developer: Alexei Andrushievich
         Contact: vint21h@vint21h.pp.ua
@@ -152,11 +136,10 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # type: str  # noqa: W605
-        with translation.override("en"):
-            result = self.client.get(
-                path=resolve_url(to="humans-txt")
-            )  # type: HttpResponse
+        """  # noqa: W605
+        result: HttpResponse = self.client.get(
+            path=resolve_url(to="humans-txt")
+        )
 
         self.assertEqual(
             first=result.context.get("HUMANS_TXT_BANNER") if result.context else None,
@@ -165,12 +148,10 @@ class HumansTxtViewTest(TestCase):
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     @override_settings(HUMANS_TXT_LAST_UPDATE=None)
+    @override_translation(language="en")
     def test_humans_txt__render__without_last_update(self) -> None:
-        """
-        Test view rendering result without last update.
-        """
-
-        expected = """
+        """Test view rendering result without last update."""
+        expected: str = """
              _ _                               _                                            _        _
             | (_)                             | |                                          | |      | |
           __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_
@@ -194,11 +175,10 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # type: str  # noqa: W605, E501
-        with translation.override("en"):
-            result = self.client.get(
-                path=resolve_url(to="humans-txt")
-            )  # type: HttpResponse
+        """  # noqa: W605, E501
+        result: HttpResponse = self.client.get(
+            path=resolve_url(to="humans-txt")
+        )
 
         self.assertIsNone(
             obj=result.context.get("HUMANS_TXT_LAST_UPDATE") if result.context else None
@@ -206,12 +186,10 @@ class HumansTxtViewTest(TestCase):
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     @override_settings(HUMANS_TXT_LANGUAGES=[])
+    @override_translation(language="en")
     def test_humans_txt__render__without_languages(self) -> None:
-        """
-        Test view rendering result without languages.
-        """
-
-        expected = """
+        """Test view rendering result without languages."""
+        expected: str = """
              _ _                               _                                            _        _
             | (_)                             | |                                          | |      | |
           __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_
@@ -235,11 +213,10 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # type: str  # noqa: W605, E501
-        with translation.override("en"):
-            result = self.client.get(
-                path=resolve_url(to="humans-txt")
-            )  # type: HttpResponse
+        """  # noqa: W605, E501
+        result: HttpResponse = self.client.get(
+            path=resolve_url(to="humans-txt")
+        )
 
         self.assertListEqual(
             list1=result.context.get("HUMANS_TXT_LANGUAGES", [])  # type: ignore
@@ -249,14 +226,12 @@ class HumansTxtViewTest(TestCase):
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
+    @override_translation(language="en")
     def test_humans_txt__render__without_team(self) -> None:
-        """
-        Test view rendering result without team.
-        """
-
+        """Test view rendering result without team."""
         Person.objects.all().delete()
 
-        expected = """
+        expected: str = """
              _ _                               _                                            _        _
             | (_)                             | |                                          | |      | |
           __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_
@@ -275,11 +250,10 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # type: str  # noqa: W605, E501
-        with translation.override("en"):
-            result = self.client.get(
-                path=resolve_url(to="humans-txt")
-            )  # type: HttpResponse
+        """  # noqa: W605, E501
+        result: HttpResponse = self.client.get(
+            path=resolve_url(to="humans-txt")
+        )
 
         self.assertQuerysetEqual(
             qs=result.context.get(  # type: ignore
@@ -291,14 +265,12 @@ class HumansTxtViewTest(TestCase):
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
+    @override_translation(language="en")
     def test_humans_txt__render__without_standards(self) -> None:
-        """
-        Test view rendering result without standards.
-        """
-
+        """Test view rendering result without standards."""
         Standard.objects.all().delete()
 
-        expected = """
+        expected: str = """
              _ _                               _                                            _        _
             | (_)                             | |                                          | |      | |
           __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_
@@ -322,11 +294,10 @@ class HumansTxtViewTest(TestCase):
         Language: en / uk
         Components: Django
         Software: tox
-        """  # type: str  # noqa: W605, E501
-        with translation.override("en"):
-            result = self.client.get(
-                path=resolve_url(to="humans-txt")
-            )  # type: HttpResponse
+        """  # noqa: W605, E501
+        result: HttpResponse = self.client.get(
+            path=resolve_url(to="humans-txt")
+        )
 
         self.assertQuerysetEqual(
             qs=result.context.get(  # type: ignore
@@ -338,14 +309,12 @@ class HumansTxtViewTest(TestCase):
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
+    @override_translation(language="en")
     def test_humans_txt__render__without_thanks(self) -> None:
-        """
-        Test view rendering result without thanks.
-        """
-
+        """Test view rendering result without thanks."""
         Thank.objects.all().delete()
 
-        expected = """
+        expected: str = """
              _ _                               _                                            _        _
             | (_)                             | |                                          | |      | |
           __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_
@@ -367,11 +336,10 @@ class HumansTxtViewTest(TestCase):
         Standards: PEP 8
         Components: Django
         Software: tox
-        """  # type: str  # noqa: W605, E501
-        with translation.override("en"):
-            result = self.client.get(
-                path=resolve_url(to="humans-txt")
-            )  # type: HttpResponse
+        """  # noqa: W605, E501
+        result: HttpResponse = self.client.get(
+            path=resolve_url(to="humans-txt")
+        )
 
         self.assertQuerysetEqual(
             qs=result.context.get(  # type: ignore
@@ -383,14 +351,12 @@ class HumansTxtViewTest(TestCase):
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
+    @override_translation(language="en")
     def test_humans_txt__render__without_components(self) -> None:
-        """
-        Test view rendering result without components.
-        """
-
+        """Test view rendering result without components."""
         Component.objects.all().delete()
 
-        expected = """
+        expected: str = """
              _ _                               _                                            _        _
             | (_)                             | |                                          | |      | |
           __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_
@@ -414,11 +380,10 @@ class HumansTxtViewTest(TestCase):
         Language: en / uk
         Standards: PEP 8
         Software: tox
-        """  # type: str  # noqa: W605, E501
-        with translation.override("en"):
-            result = self.client.get(
-                path=resolve_url(to="humans-txt")
-            )  # type: HttpResponse
+        """  # noqa: W605, E501
+        result: HttpResponse = self.client.get(
+            path=resolve_url(to="humans-txt")
+        )
 
         self.assertQuerysetEqual(
             qs=result.context.get(  # type: ignore
@@ -430,14 +395,12 @@ class HumansTxtViewTest(TestCase):
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
+    @override_translation(language="en")
     def test_humans_txt__render__without_software(self) -> None:
-        """
-        Test view rendering result without software.
-        """
-
+        """Test view rendering result without software."""
         Software.objects.all().delete()
 
-        expected = """
+        expected: str = """
              _ _                               _                                            _        _
             | (_)                             | |                                          | |      | |
           __| |_  __ _ _ __   __ _  ___ ______| |__  _   _ _ __ ___   __ _ _ __  ___ ______| |___  _| |_
@@ -461,11 +424,10 @@ class HumansTxtViewTest(TestCase):
         Language: en / uk
         Standards: PEP 8
         Components: Django
-        """  # type: str  # noqa: W605, E501
-        with translation.override("en"):
-            result = self.client.get(
-                path=resolve_url(to="humans-txt")
-            )  # type: HttpResponse
+        """  # noqa: W605, E501
+        result: HttpResponse = self.client.get(
+            path=resolve_url(to="humans-txt")
+        )
 
         self.assertQuerysetEqual(
             qs=result.context.get(  # type: ignore

@@ -5,11 +5,11 @@
 
 
 from datetime import date
-from typing import Dict, List, Union  # noqa: F401  # pylint: disable=W0611
+from typing import Dict, List, Union  # noqa: F401
 
 from django.shortcuts import render
-from django.db.models import Manager
 from django.http import HttpResponse
+from django.db.models import QuerySet
 from django.http.request import HttpRequest
 
 from humans_txt.conf import settings
@@ -20,7 +20,7 @@ from humans_txt.models.standard import Standard
 from humans_txt.models.component import Component
 
 
-__all__ = ["humans_txt"]  # type: List[str]
+__all__: List[str] = ["humans_txt"]
 
 
 def humans_txt(request: HttpRequest) -> HttpResponse:
@@ -32,8 +32,19 @@ def humans_txt(request: HttpRequest) -> HttpResponse:
     :return: rendered humans.txt
     :rtype: HttpResponse
     """
-
-    context = {
+    context: Dict[
+        str,
+        Union[
+            str,
+            date,
+            List[str],
+            QuerySet[Person],
+            QuerySet[Thank],
+            QuerySet[Standard],
+            QuerySet[Component],
+            QuerySet[Software],
+        ],
+    ] = {
         "HUMANS_TXT_BANNER": settings.HUMANS_TXT_BANNER,
         "HUMANS_TXT_LAST_UPDATE": settings.HUMANS_TXT_LAST_UPDATE,
         "HUMANS_TXT_LANGUAGES": settings.HUMANS_TXT_LANGUAGES,
@@ -42,7 +53,7 @@ def humans_txt(request: HttpRequest) -> HttpResponse:
         "HUMANS_TXT_STANDARDS": Standard.objects.all(),
         "HUMANS_TXT_COMPONENTS": Component.objects.all(),
         "HUMANS_TXT_SOFTWARE": Software.objects.all(),
-    }  # type: Dict[str, Union[str, date, List[str], Manager[Person], Manager[Thank], Manager[Standard], Manager[Component], Manager[Software]]]  # noqa: E501
+    }
 
     return render(
         request=request,

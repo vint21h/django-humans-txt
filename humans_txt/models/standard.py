@@ -4,43 +4,29 @@
 # humans_txt/models/standard.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List
 
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-__all__ = ["Standard"]  # type: List[str]
+__all__: List[str] = ["Standard"]
 
 
-class Standard(models.Model):
-    """
-    Standard model.
-    """
+class Standard(models.Model):  # noqa: DJ10,DJ11
+    """Standard model."""
 
     name = models.CharField(
         verbose_name=_("standard name"), max_length=256, db_index=True
     )
 
     class Meta:
-        """
-        Model settings.
-        """
+        """Model settings."""
 
-        app_label = "humans_txt"  # type: str
-        verbose_name = _("standard")  # type: str
-        verbose_name_plural = _("standards")  # type: str
-        ordering = ["name"]  # type: List[str]
-
-    def __unicode__(self) -> str:
-        """
-        Model representation.
-
-        :return: standard name
-        :rtype: str
-        """
-
-        return self.name
+        app_label: str = "humans_txt"
+        verbose_name: str = _("standard")
+        verbose_name_plural: str = _("standards")
+        ordering: List[str] = ["name"]
 
     def __str__(self) -> str:
         """
@@ -49,8 +35,16 @@ class Standard(models.Model):
         :return: standard name
         :rtype: str
         """
-
         return self.__unicode__()
+
+    def __unicode__(self) -> str:
+        """
+        Model representation.
+
+        :return: standard name
+        :rtype: str
+        """
+        return self.name
 
     def __repr__(self) -> str:
         """
@@ -59,5 +53,4 @@ class Standard(models.Model):
         :return: standard name
         :rtype: str
         """
-
         return self.__unicode__()

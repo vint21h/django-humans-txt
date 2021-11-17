@@ -4,28 +4,24 @@
 # humans_txt/conf.py
 
 
-from typing import List  # pylint: disable=W0611
-from datetime import date  # noqa: F401  # pylint: disable=W0611
+from typing import List
+from datetime import date  # noqa: F401
 
 from appconf import AppConf
 from django.conf import settings
 
 
-__all__ = ["settings"]  # type: List[str]
+__all__: List[str] = ["settings"]
 
 
 class DjangoHumansTxtAppConf(AppConf):
-    """
-    Django humans.txt settings.
-    """
+    """Django humans.txt settings."""
 
-    BANNER = getattr(settings, "HUMANS_TXT_BANNER", "")  # type: str
-    LAST_UPDATE = getattr(settings, "HUMANS_TXT_LAST_UPDATE", None)  # type: date
-    LANGUAGES = getattr(settings, "HUMANS_TXT_LANGUAGES", None)  # type: List[str]
+    BANNER: str = getattr(settings, "HUMANS_TXT_BANNER", "")
+    LAST_UPDATE: date = getattr(settings, "HUMANS_TXT_LAST_UPDATE", None)
+    LANGUAGES: List[str] = getattr(settings, "HUMANS_TXT_LANGUAGES", None)
 
     class Meta:
-        """
-        Config settings.
-        """
+        """Config settings."""
 
-        prefix = "humans_txt"  # type: str
+        prefix: str = "humans_txt"

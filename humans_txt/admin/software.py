@@ -4,18 +4,16 @@
 # humans_txt/admin/software.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List
 
 from django.contrib import admin
 
 
-__all__ = ["SoftwareAdmin"]  # type: List[str]
+__all__: List[str] = ["SoftwareAdmin"]
 
 
 class SoftwareAdmin(admin.ModelAdmin):  # type: ignore
-    """
-    Customize Software model for admin area.
-    """
+    """Customize Software model for admin area."""
 
-    list_display = ["name"]  # type: List[str]
-    search_fields = ["name"]  # type: List[str]
+    list_display: List[str] = ["name"]
+    search_fields: List[str] = ["name"]

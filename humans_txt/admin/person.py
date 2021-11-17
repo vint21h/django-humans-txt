@@ -4,30 +4,28 @@
 # humans_txt/admin/person.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List
 
 from django.contrib import admin
 
 
-__all__ = ["PersonAdmin"]  # type: List[str]
+__all__: List[str] = ["PersonAdmin"]
 
 
 class PersonAdmin(admin.ModelAdmin):  # type: ignore
-    """
-    Customize Person model for admin area.
-    """
+    """Customize Person model for admin area."""
 
-    list_display = [
+    list_display: List[str] = [
         "name",
         "title",
         "contact",
         "twitter",
         "location",
-    ]  # type: List[str]
-    search_fields = [
+    ]
+    search_fields: List[str] = [
         "name",
         "title",
         "contact",
         "twitter",
         "location",
-    ]  # type: List[str]
+    ]

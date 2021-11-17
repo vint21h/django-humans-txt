@@ -4,27 +4,22 @@
 # tests/models/test_person.py
 
 
-from typing import List, Optional  # pylint: disable=W0611
+from typing import List, Optional
 
 from django.test import TestCase
 
 from humans_txt.models.person import Person
 
 
-__all__ = ["PersonModelTest"]  # type: List[str]
+__all__: List[str] = ["PersonModelTest"]
 
 
 class PersonModelTest(TestCase):
-    """
-    Person model tests.
-    """
+    """Person model tests."""
 
     @classmethod
     def setUpTestData(cls):
-        """
-        Set up non-modified objects used by all test methods.
-        """
-
+        """Set up non-modified objects used by all test methods."""
         Person.objects.create(
             name="Alexei Andrushievich",
             title="Backend developer",
@@ -34,11 +29,8 @@ class PersonModelTest(TestCase):
         )
 
     def test___unicode__(self) -> None:
-        """
-        __unicode__ method must return formatted person title and name.
-        """
-
-        person = Person.objects.first()  # type: Optional[Person]
+        """__unicode__ method must return formatted person title and name."""
+        person: Optional[Person] = Person.objects.first()
 
         self.assertEqual(
             first=person.__unicode__(),  # type: ignore
@@ -46,22 +38,16 @@ class PersonModelTest(TestCase):
         )
 
     def test___repr__(self) -> None:
-        """
-        __repr__ method must return formatted person title and name.
-        """
-
-        person = Person.objects.first()  # type: Optional[Person]
+        """__repr__ method must return formatted person title and name."""
+        person: Optional[Person] = Person.objects.first()
 
         self.assertEqual(
             first=person.__repr__(), second="Backend developer: Alexei Andrushievich"
         )
 
     def test___str__(self) -> None:
-        """
-        __str__ method must return formatted person title and name.
-        """
-
-        person = Person.objects.first()  # type: Optional[Person]
+        """__str__ method must return formatted person title and name."""
+        person: Optional[Person] = Person.objects.first()
 
         self.assertEqual(
             first=person.__str__(), second="Backend developer: Alexei Andrushievich"

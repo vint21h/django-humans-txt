@@ -4,18 +4,16 @@
 # humans_txt/admin/thank.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List
 
 from django.contrib import admin
 
 
-__all__ = ["ThankAdmin"]  # type: List[str]
+__all__: List[str] = ["ThankAdmin"]
 
 
 class ThankAdmin(admin.ModelAdmin):  # type: ignore
-    """
-    Customize Thank model for admin area.
-    """
+    """Customize Thank model for admin area."""
 
-    list_display = ["name", "url"]  # type: List[str]
-    search_fields = ["name", "url"]  # type: List[str]
+    list_display: List[str] = ["name", "url"]
+    search_fields: List[str] = ["name", "url"]
